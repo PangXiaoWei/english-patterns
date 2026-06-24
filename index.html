@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向中文母语者的英语句型、过去式、过去分词和未来时学习工具">
+  <title>Awei English Patterns</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Awei English Patterns">
+      <span class="brand-mark">AW</span>
+      <span>Awei English Patterns</span>
+    </a>
+    <div class="header-actions">
+      <button class="icon-button" id="playCurrent" type="button" title="朗读当前句子" aria-label="朗读当前句子">▶</button>
+      <button class="small-button" id="resetProgress" type="button">重置练习</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">FOR CHINESE SPEAKERS</p>
+        <h1>用中文思维对照，掌握英语句型和时态</h1>
+        <p class="hero-copy">重点练习英语最容易卡住的地方：动词要变形、句子靠结构表达时间、过去分词常和完成时及被动语态一起出现。</p>
+      </div>
+      <div class="hero-panel" aria-label="学习进度">
+        <span>今日学习</span>
+        <strong><span id="learnedCount">0</span> / 12</strong>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <p id="statusText">选择一个知识点开始。</p>
+      </div>
+    </section>
+
+    <section class="control-strip" aria-label="学习控制">
+      <label>
+        知识点
+        <select id="topicSelect"></select>
+      </label>
+      <label>
+        练习模式
+        <select id="modeSelect">
+          <option value="learn">讲解卡</option>
+          <option value="choose">选择题</option>
+          <option value="transform">句子转换</option>
+        </select>
+      </label>
+      <label>
+        美式发音速度
+        <input id="rateSlider" type="range" min="0.55" max="0.95" step="0.05" value="0.72">
+      </label>
+    </section>
+
+    <section class="workspace">
+      <aside class="lesson-list" aria-label="课程列表">
+        <div class="side-heading">
+          <p class="eyebrow">LESSONS</p>
+          <h2>核心知识</h2>
+        </div>
+        <div id="lessonButtons" class="lesson-buttons"></div>
+      </aside>
+
+      <section class="study-area" aria-live="polite">
+        <div id="learnPanel" class="panel">
+          <div class="card-head">
+            <span id="lessonTag" class="tag"></span>
+            <button class="listen-button" id="lessonSpeak" type="button">美式朗读</button>
+          </div>
+          <h2 id="lessonTitle"></h2>
+          <p id="lessonChinese" class="cn-note"></p>
+          <div class="formula-box">
+            <span>英语结构</span>
+            <strong id="lessonFormula"></strong>
+          </div>
+          <div class="example-grid" id="exampleGrid"></div>
+          <div class="contrast-box">
+            <h3>中文母语者要注意</h3>
+            <p id="contrastText"></p>
+          </div>
+        </div>
+
+        <div id="choosePanel" class="panel hidden">
+          <div class="card-head">
+            <span class="tag">QUIZ</span>
+            <button class="listen-button" id="quizSpeak" type="button">听题目</button>
+          </div>
+          <p class="prompt-label">请选择最自然的英文句子</p>
+          <h2 id="quizPrompt"></h2>
+          <div id="choiceOptions" class="choice-options"></div>
+          <p id="choiceFeedback" class="feedback"></p>
+        </div>
+
+        <div id="transformPanel" class="panel hidden">
+          <div class="card-head">
+            <span class="tag">WRITE</span>
+            <button class="listen-button" id="answerSpeak" type="button">朗读答案</button>
+          </div>
+          <p class="prompt-label">根据中文提示写英文</p>
+          <h2 id="writePrompt"></h2>
+          <p id="writeHint" class="cn-note"></p>
+          <form id="writeForm" class="write-form">
+            <input id="writeInput" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入英文句子">
+            <button class="primary-button" type="submit">检查</button>
+          </form>
+          <p id="writeFeedback" class="feedback"></p>
+        </div>
+      </section>
+    </section>
+
+    <section class="reference">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">REFERENCE</p>
+          <h2>动词三态速查</h2>
+        </div>
+        <input id="verbSearch" type="search" placeholder="搜索动词，例如 go / went / gone">
+      </div>
+      <div class="verb-table-wrap">
+        <table>
+          <thead>
+            <tr><th>原形</th><th>过去式</th><th>过去分词</th><th>例句</th><th>发音</th></tr>
+          </thead>
+          <tbody id="verbTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Awei English Patterns</span>
+    <p>清楚、慢一点、反复听，英语结构会越来越稳。</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
