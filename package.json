@@ -1,0 +1,17 @@
+{
+  "name": "english-patterns",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/check-audio.mjs --quiet",
+    "generate-audio": "node scripts/generate-audio.mjs",
+    "generate-audio:test": "node scripts/generate-audio.mjs --limit 10",
+    "generate-audio:dry": "node scripts/generate-audio.mjs --dry-run --limit 10",
+    "check-audio": "node scripts/check-audio.mjs"
+  },
+  "dependencies": {
+    "dotenv": "latest",
+    "openai": "latest"
+  }
+}

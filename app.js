@@ -5,12 +5,21 @@ const data = {
   scenarios: window.SCENARIOS || [],
   pronunciation: window.PRONUNCIATION || [],
   tests: window.TESTS || [],
-  writing: window.WRITING_PROMPTS || []
+  writing: window.WRITING_PROMPTS || [],
+  vocabulary: window.VOCABULARY || [],
+  minimalPairs: window.MINIMAL_PAIRS || []
 };
 
 const store = {
   progress: "awei.switch.progress.v1",
-  mistakes: "awei.switch.mistakes.v1"
+  mistakes: "awei.switch.mistakes.v1",
+  masteredWords: "english_mastered_words",
+  favoriteWords: "english_favorite_words",
+  dailyMission: "english_daily_mission_done",
+  lastPractice: "english_last_practice_date",
+  streakDays: "english_streak_days",
+  couldntSay: "english_couldnt_say_today",
+  minimalPairs: "english_minimal_pairs_progress"
 };
 
 const state = {
@@ -21,10 +30,18 @@ const state = {
   scenarioIndex: 0,
   scenarioLevel: "A2",
   testIndex: 0,
+  vocabCategory: "全部",
+  vocabLevel: "全部",
+  realLifeCategory: "全部",
   voiceRate: 0.72,
   voices: [],
   progress: readJSON(store.progress, { date: todayKey(), learned: 0 }),
-  mistakes: readJSON(store.mistakes, [])
+  mistakes: readJSON(store.mistakes, []),
+  masteredWords: readJSON(store.masteredWords, []),
+  favoriteWords: readJSON(store.favoriteWords, []),
+  dailyMission: readJSON(store.dailyMission, { date: todayKey(), done: [] }),
+  couldntSay: readJSON(store.couldntSay, []),
+  minimalPairs: readJSON(store.minimalPairs, {})
 };
 
 function readJSON(key, fallback) {
@@ -93,6 +110,9 @@ function americanVoice() {
 }
 
 function speak(text, rate = state.voiceRate) {
+  if (window.EnglishAudio) {
+    return window.EnglishAudio.playAudioOrTTS({ text, slow: rate < 0.8 });
+  }
   if (!("speechSynthesis" in window)) return;
   speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
@@ -105,6 +125,7 @@ function speak(text, rate = state.voiceRate) {
 }
 
 function switchView(view) {
+  if (window.EnglishAudio) window.EnglishAudio.stopAudio();
   state.view = view;
   document.querySelectorAll(".view").forEach(section => section.classList.toggle("active-view", section.id === `${view}View`));
   document.querySelectorAll(".main-nav button").forEach(button => button.classList.toggle("active", button.dataset.view === view));
@@ -126,6 +147,188 @@ function renderHome() {
   $("todayPronunciation").textContent = pron.group;
   $("todayVerbs").innerHTML = data.verbs.slice(day % 8, day % 8 + 5).map(v => `<span>${v[0]}</span>`).join("");
   saveProgress();
+}
+
+function activeMissionItems() {
+  const vocab = data.vocabulary.filter(item => item.priority <= 1);
+  return [
+    ...vocab.filter(item => item.type === "word").slice(0, 5).map(item => ({ id: `word-${item.id}`, label: `跟读词：${item.text}`, item })),
+    ...vocab.filter(item => item.type === "phrase").slice(0, 3).map(item => ({ id: `phrase-${item.id}`, label: `跟读短语：${item.text}`, item })),
+    ...vocab.filter(item => item.type === "sentence").slice(0, 2).map(item => ({ id: `sentence-${item.id}`, label: `跟读句子：${item.example}`, item })),
+    { id: `pair-${data.minimalPairs[0]?.id || "work-walk"}`, label: `最小音差：${data.minimalPairs[0]?.wordA || "work"} / ${data.minimalPairs[0]?.wordB || "walk"}`, pair: data.minimalPairs[0] },
+    { id: "couldnt-say", label: "记录 1 句今天没说出来的话", jump: "couldntSay" }
+  ];
+}
+
+function ensureDailyMission() {
+  if (state.dailyMission.date !== todayKey()) {
+    state.dailyMission = { date: todayKey(), done: [] };
+    writeJSON(store.dailyMission, state.dailyMission);
+  }
+}
+
+function markMissionDone(id) {
+  ensureDailyMission();
+  if (!state.dailyMission.done.includes(id)) {
+    state.dailyMission.done.push(id);
+    writeJSON(store.dailyMission, state.dailyMission);
+  }
+  updatePracticeStreak();
+}
+
+function updatePracticeStreak() {
+  const last = localStorage.getItem(store.lastPractice);
+  const today = todayKey();
+  if (last === today) return;
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const current = Number(localStorage.getItem(store.streakDays) || "0");
+  localStorage.setItem(store.streakDays, last === yesterday.toLocaleDateString("en-CA") ? String(current + 1) : "1");
+  localStorage.setItem(store.lastPractice, today);
+}
+
+function renderSpeakActions(item, idPrefix = item.id) {
+  const wordText = item.tts?.wordText || item.text;
+  const exampleText = item.tts?.exampleText || item.example;
+  return `
+    <div class="speak-actions">
+      <button data-audio="${item.audio?.word || ""}" data-text="${escapeAttr(wordText)}">🔈 Word</button>
+      <button data-audio="${item.audio?.example || ""}" data-text="${escapeAttr(exampleText)}">🔈 Sentence</button>
+      <button data-audio="${item.audio?.example || ""}" data-text="${escapeAttr(exampleText)}" data-slow="true">🐢 Slow</button>
+      <button data-follow-read="${idPrefix}" data-audio="${item.audio?.example || ""}" data-text="${escapeAttr(exampleText)}" data-meaning="${escapeAttr(item.chinese)}" data-keywords="${escapeAttr((item.tags || []).join(", "))}">🎙️ 跟读</button>
+      <button data-fav-word="${item.id}" class="${state.favoriteWords.includes(item.id) ? "active-action" : ""}">⭐ 收藏</button>
+      <button data-master-word="${item.id}" class="${state.masteredWords.includes(item.id) ? "active-action" : ""}">✅ 已掌握</button>
+    </div>
+  `;
+}
+
+function escapeAttr(value) {
+  return String(value || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+}
+
+function renderDailyMission() {
+  if (!$("dailyMissionPanel")) return;
+  ensureDailyMission();
+  const missions = activeMissionItems();
+  $("voiceToggle").textContent = window.EnglishAudio?.isVoiceEnabled() ? "声音开" : "静音";
+  $("dailyMissionPanel").innerHTML = `
+    <article class="mission-summary">
+      <p class="eyebrow">5-10 MINUTES</p>
+      <h3>今天只做一小组：听、跟读、标记完成。</h3>
+      <strong>${state.dailyMission.done.length} / ${missions.length}</strong>
+      <div class="progress-track"><span style="width:${Math.min(100, state.dailyMission.done.length / missions.length * 100)}%"></span></div>
+    </article>
+    <div class="mission-tasks">
+      ${missions.map(mission => `
+        <article class="mission-task ${state.dailyMission.done.includes(mission.id) ? "done" : ""}">
+          <div><b>${mission.label}</b><span>${mission.item?.chinese || mission.pair?.chinese || "把真实想法变成可练的英文。"}</span></div>
+          ${mission.item ? renderSpeakActions(mission.item, mission.id) : ""}
+          ${mission.pair ? renderPairActions(mission.pair, mission.id) : ""}
+          ${mission.jump ? `<button class="primary-button" data-jump="${mission.jump}">去记录</button>` : ""}
+          <button class="small-button" data-mission-done="${mission.id}">${state.dailyMission.done.includes(mission.id) ? "已完成" : "标记完成"}</button>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderVocabSelectors() {
+  if (!$("vocabCategory")) return;
+  const categories = ["全部", ...new Set(data.vocabulary.map(item => item.category))];
+  $("vocabCategory").innerHTML = categories.map(item => `<option>${item}</option>`).join("");
+  $("vocabCategory").value = state.vocabCategory;
+  $("vocabLevel").value = state.vocabLevel;
+}
+
+function renderVocabulary() {
+  if (!$("vocabPanel")) return;
+  renderVocabSelectors();
+  const visible = data.vocabulary
+    .filter(item => state.vocabCategory === "全部" || item.category === state.vocabCategory)
+    .filter(item => state.vocabLevel === "全部" || item.level === state.vocabLevel)
+    .sort((a, b) => a.priority - b.priority || a.text.localeCompare(b.text))
+    .slice(0, 80);
+  $("vocabPanel").innerHTML = visible.map(item => renderVocabCard(item)).join("") + renderMinimalPairs();
+}
+
+function renderVocabCard(item) {
+  return `
+    <article class="vocab-card">
+      <div class="card-head"><span class="tag">${item.category}</span><span class="tag">${item.level} · P${item.priority}</span></div>
+      <h3>${item.text}</h3>
+      <p class="meaning">${item.chinese}</p>
+      <p>${item.simpleDefinition}</p>
+      <div class="example-line"><b>${item.example}</b><span>${item.exampleChinese}</span></div>
+      ${renderSpeakActions(item)}
+    </article>
+  `;
+}
+
+function renderPairActions(pair, missionId = pair.id) {
+  return `
+    <div class="speak-actions">
+      <button data-audio="${pair.audioA}" data-text="${escapeAttr(pair.ttsA)}">🔈 ${pair.wordA}</button>
+      <button data-audio="${pair.audioB}" data-text="${escapeAttr(pair.ttsB)}">🔈 ${pair.wordB}</button>
+      <button data-follow-read="${missionId}" data-audio="${pair.audioA}" data-text="${escapeAttr(pair.wordA)}" data-meaning="${escapeAttr(pair.chinese)}">🎙️ 跟读 A</button>
+      <button data-follow-read="${missionId}-b" data-audio="${pair.audioB}" data-text="${escapeAttr(pair.wordB)}" data-meaning="${escapeAttr(pair.chinese)}">🎙️ 跟读 B</button>
+      <button data-pair-master="${pair.id}" class="${state.minimalPairs[pair.id] ? "active-action" : ""}">✅ 掌握</button>
+    </div>
+  `;
+}
+
+function renderMinimalPairs() {
+  return data.minimalPairs.map(pair => `
+    <article class="vocab-card minimal-card">
+      <div class="card-head"><span class="tag">Minimal Pairs</span><span>${state.minimalPairs[pair.id] ? "已掌握" : "练习中"}</span></div>
+      <h3>${pair.wordA} / ${pair.wordB}</h3>
+      <p class="meaning">${pair.chinese}</p>
+      <div class="example-line"><b>${pair.exampleA}</b><span>${pair.exampleB}</span></div>
+      ${renderPairActions(pair)}
+    </article>
+  `).join("");
+}
+
+function renderRealLife() {
+  if (!$("realLifePanel")) return;
+  const categories = ["全部", "Classroom English", "Homestay English", "Volunteer English", "Shopping & Supermarket", "Job Search English", "IT Support English", "Social Small Talk", "Health & Feelings", "Bank & Payment"];
+  $("realLifeCategory").innerHTML = categories.map(item => `<option>${item}</option>`).join("");
+  $("realLifeCategory").value = state.realLifeCategory;
+  const visible = data.vocabulary
+    .filter(item => item.type === "sentence")
+    .filter(item => state.realLifeCategory === "全部" || item.category === state.realLifeCategory);
+  $("realLifePanel").innerHTML = visible.map(item => renderVocabCard(item)).join("");
+}
+
+function renderCouldntSay() {
+  if (!$("couldntList")) return;
+  $("couldntList").innerHTML = state.couldntSay.length ? state.couldntSay.map(item => `
+    <article class="vocab-card">
+      <div class="card-head"><span class="tag">${item.category || "Daily Note"}</span><small>${item.date}</small></div>
+      <p class="meaning">${item.originalText}</p>
+      <h3>${item.naturalEnglish || "Add a natural English sentence later."}</h3>
+      <p>${item.simpleEnglish || ""}</p>
+      <p>${item.keywords || ""}</p>
+      <div class="speak-actions">
+        <button data-text="${escapeAttr(item.naturalEnglish || item.simpleEnglish || item.originalText)}">🔈 Speak</button>
+        <button data-text="${escapeAttr(item.naturalEnglish || item.simpleEnglish || item.originalText)}" data-slow="true">🐢 Slow</button>
+        <button data-follow-read="${item.id}" data-text="${escapeAttr(item.naturalEnglish || item.simpleEnglish || item.originalText)}" data-meaning="${escapeAttr(item.originalText)}">🎙️ 跟读</button>
+        <button data-couldnt-master="${item.id}" class="${item.mastered ? "active-action" : ""}">✅ 已掌握</button>
+      </div>
+    </article>
+  `).join("") : `<article class="panel"><p class="empty-note">还没有记录。今天遇到说不出来的一句话，就写在这里。</p></article>`;
+}
+
+function renderProgress() {
+  if (!$("progressPanel")) return;
+  const follow = readJSON(window.EnglishAudio?.keys.followRead || "english_follow_read_count", {});
+  const today = todayKey();
+  const todayFollow = Object.values(follow).reduce((sum, item) => sum + (item.byDate?.[today] || 0), 0);
+  $("progressPanel").innerHTML = `
+    <div><strong>${state.masteredWords.length}</strong><span>已掌握词汇</span></div>
+    <div><strong>${state.favoriteWords.length}</strong><span>收藏词句</span></div>
+    <div><strong>${todayFollow}</strong><span>今日跟读次数</span></div>
+    <div><strong>${localStorage.getItem(store.streakDays) || 0}</strong><span>连续练习天数</span></div>
+  `;
 }
 
 function renderLessonSelectors() {
@@ -279,6 +482,7 @@ function renderMistakes() {
 
 function renderAll() {
   renderHome();
+  renderDailyMission();
   renderLessonSelectors();
   renderLesson();
   renderVerbSelectors();
@@ -286,6 +490,10 @@ function renderAll() {
   renderScenarioSelectors();
   renderScenario();
   renderPronunciation();
+  renderVocabulary();
+  renderRealLife();
+  renderCouldntSay();
+  renderProgress();
   renderTest();
   renderMistakes();
 }
@@ -293,6 +501,66 @@ function renderAll() {
 document.addEventListener("click", event => {
   const nav = event.target.closest("[data-view], [data-jump]");
   if (nav) switchView(nav.dataset.view || nav.dataset.jump);
+
+  const audioButton = event.target.closest("[data-audio], [data-text]");
+  if (audioButton && !audioButton.dataset.followRead) {
+    window.EnglishAudio?.playAudioOrTTS({
+      audioPath: audioButton.dataset.audio,
+      text: audioButton.dataset.text,
+      slow: audioButton.dataset.slow === "true"
+    });
+  }
+
+  const followRead = event.target.closest("[data-follow-read]");
+  if (followRead) {
+    window.EnglishAudio?.playAudioOrTTS({
+      audioPath: followRead.dataset.audio,
+      text: followRead.dataset.text,
+      slow: followRead.dataset.slow === "true"
+    });
+    window.EnglishAudio?.recordFollowRead(followRead.dataset.followRead);
+    $("statusText").textContent = `Repeat it aloud. ${followRead.dataset.meaning || ""} ${followRead.dataset.keywords || ""}`;
+    markMissionDone(followRead.dataset.followRead);
+    renderDailyMission();
+    renderProgress();
+  }
+
+  const fav = event.target.closest("[data-fav-word]");
+  if (fav) {
+    state.favoriteWords = toggleArray(store.favoriteWords, state.favoriteWords, fav.dataset.favWord);
+    renderVocabulary();
+    renderRealLife();
+    renderProgress();
+  }
+
+  const master = event.target.closest("[data-master-word]");
+  if (master) {
+    state.masteredWords = toggleArray(store.masteredWords, state.masteredWords, master.dataset.masterWord);
+    renderVocabulary();
+    renderRealLife();
+    renderProgress();
+  }
+
+  const missionDone = event.target.closest("[data-mission-done]");
+  if (missionDone) {
+    markMissionDone(missionDone.dataset.missionDone);
+    renderDailyMission();
+    renderProgress();
+  }
+
+  const pairMaster = event.target.closest("[data-pair-master]");
+  if (pairMaster) {
+    state.minimalPairs[pairMaster.dataset.pairMaster] = !state.minimalPairs[pairMaster.dataset.pairMaster];
+    writeJSON(store.minimalPairs, state.minimalPairs);
+    renderVocabulary();
+  }
+
+  const couldntMaster = event.target.closest("[data-couldnt-master]");
+  if (couldntMaster) {
+    state.couldntSay = state.couldntSay.map(item => item.id === couldntMaster.dataset.couldntMaster ? { ...item, mastered: !item.mastered } : item);
+    writeJSON(store.couldntSay, state.couldntSay);
+    renderCouldntSay();
+  }
 
   const speakButton = event.target.closest("[data-speak]");
   if (speakButton) speak(speakButton.dataset.speak, 0.62);
@@ -361,6 +629,12 @@ document.addEventListener("click", event => {
   }
 });
 
+function toggleArray(key, current, id) {
+  const next = current.includes(id) ? current.filter(item => item !== id) : [...current, id];
+  writeJSON(key, next);
+  return next;
+}
+
 $("lessonSelect").addEventListener("change", event => { state.lessonIndex = Number(event.target.value); renderLesson(); });
 $("verbSelect").addEventListener("change", event => { state.verbIndex = Number(event.target.value); renderVerb(); });
 $("scenarioSelect").addEventListener("change", event => { state.scenarioIndex = Number(event.target.value); renderScenario(); });
@@ -369,8 +643,38 @@ $("nextTest").addEventListener("click", () => { state.testIndex += 1; renderTest
 $("slowSpeed").addEventListener("click", () => { state.voiceRate = 0.62; $("statusText").textContent = "发音速度：慢速。"; });
 $("normalSpeed").addEventListener("click", () => { state.voiceRate = 0.86; $("statusText").textContent = "发音速度：正常。"; });
 $("clearMistakes").addEventListener("click", () => { state.mistakes = []; writeJSON(store.mistakes, state.mistakes); renderMistakes(); renderHome(); });
+$("voiceToggle")?.addEventListener("click", () => {
+  const next = !window.EnglishAudio?.isVoiceEnabled();
+  window.EnglishAudio?.setVoiceEnabled(next);
+  $("voiceToggle").textContent = next ? "声音开" : "静音";
+});
+$("vocabCategory")?.addEventListener("change", event => { state.vocabCategory = event.target.value; renderVocabulary(); });
+$("vocabLevel")?.addEventListener("change", event => { state.vocabLevel = event.target.value; renderVocabulary(); });
+$("realLifeCategory")?.addEventListener("change", event => { state.realLifeCategory = event.target.value; renderRealLife(); });
+$("couldntForm")?.addEventListener("submit", event => {
+  event.preventDefault();
+  const item = {
+    id: crypto.randomUUID ? crypto.randomUUID() : `say-${Date.now()}`,
+    date: todayKey(),
+    originalText: $("couldntOriginal").value.trim(),
+    naturalEnglish: $("couldntNatural").value.trim(),
+    simpleEnglish: $("couldntSimple").value.trim(),
+    keywords: $("couldntKeywords").value.trim(),
+    category: "Daily Speaking",
+    mastered: false
+  };
+  if (!item.originalText) return;
+  state.couldntSay = [item, ...state.couldntSay].slice(0, 80);
+  writeJSON(store.couldntSay, state.couldntSay);
+  markMissionDone("couldnt-say");
+  event.target.reset();
+  renderCouldntSay();
+  renderDailyMission();
+  renderProgress();
+});
 
 refreshVoices();
 if ("speechSynthesis" in window) speechSynthesis.addEventListener("voiceschanged", refreshVoices);
+window.addEventListener("hashchange", () => switchView(location.hash.replace("#", "") || "home"));
 renderAll();
 switchView(location.hash.replace("#", "") || "home");

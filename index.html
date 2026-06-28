@@ -15,12 +15,17 @@
     </a>
     <nav class="main-nav" aria-label="主导航">
       <button data-view="home" class="active">首页</button>
+      <button data-view="daily">每日任务</button>
+      <button data-view="vocabulary">发音词库</button>
+      <button data-view="realLife">真实场景</button>
+      <button data-view="couldntSay">没说出来</button>
       <button data-view="switches">英语开关</button>
       <button data-view="verbs">动词训练</button>
       <button data-view="scenarios">场景口语</button>
       <button data-view="pronunciation">发音跟读</button>
       <button data-view="tests">测试训练</button>
       <button data-view="mistakes">错题本</button>
+      <button data-view="progress">进度</button>
     </nav>
   </header>
 
@@ -37,6 +42,7 @@
           <strong><span id="learnedCount">0</span> / 20</strong>
           <div class="progress-track"><span id="progressBar"></span></div>
           <p id="statusText">从今日英语开关开始。</p>
+          <button class="primary-button" data-jump="daily">开始今日任务</button>
         </div>
       </section>
 
@@ -53,6 +59,36 @@
         <article class="today-card"><p class="eyebrow">今日场景</p><h2 id="todayScenario"></h2><p>看关键词说 1 分钟，不要背全文。</p><button class="primary-button" data-jump="scenarios">练口语</button></article>
         <article class="today-card"><p class="eyebrow">今日发音组</p><h2 id="todayPronunciation"></h2><p>慢速听，正常速跟读。</p><button class="primary-button" data-jump="pronunciation">练发音</button></article>
       </section>
+    </section>
+
+    <section id="dailyView" class="view">
+      <div class="module-head"><div><p class="eyebrow">DAILY ENGLISH MISSION</p><h2>每日英语任务</h2></div><button class="small-button" id="voiceToggle">声音开</button></div>
+      <div id="dailyMissionPanel" class="mission-layout"></div>
+    </section>
+
+    <section id="vocabularyView" class="view">
+      <div class="module-head"><div><p class="eyebrow">PRONUNCIATION VOCABULARY</p><h2>发音词库</h2></div><div class="inline-controls"><select id="vocabCategory"></select><select id="vocabLevel"><option value="全部">全部</option><option>A2</option><option>B1</option></select></div></div>
+      <div id="vocabPanel" class="vocab-grid"></div>
+    </section>
+
+    <section id="realLifeView" class="view">
+      <div class="module-head"><div><p class="eyebrow">REAL LIFE ENGLISH</p><h2>真实生活场景英语</h2></div><select id="realLifeCategory"></select></div>
+      <div id="realLifePanel" class="vocab-grid"></div>
+    </section>
+
+    <section id="couldntSayView" class="view">
+      <div class="module-head"><div><p class="eyebrow">I COULDN'T SAY IT TODAY</p><h2>我今天没说出来</h2></div></div>
+      <div class="couldnt-layout">
+        <form id="couldntForm" class="panel">
+          <h3>记录一句今天想说但没说出来的话</h3>
+          <input id="couldntOriginal" placeholder="中文或中式英文，例如：我不知道怎么解释这个问题" required>
+          <input id="couldntNatural" placeholder="自然英文，例如：I am not sure how to explain this problem.">
+          <input id="couldntSimple" placeholder="更简单版本，例如：I cannot explain this well.">
+          <input id="couldntKeywords" placeholder="关键词，例如：explain, problem">
+          <button class="primary-button">保存表达</button>
+        </form>
+        <div id="couldntList" class="couldnt-list"></div>
+      </div>
     </section>
 
     <section id="switchesView" class="view">
@@ -91,6 +127,11 @@
       <div class="module-head"><div><p class="eyebrow">MISTAKE BOOK</p><h2>错题本 + 间隔复习</h2></div><button class="small-button" id="clearMistakes">清空错题</button></div>
       <div id="mistakePanel" class="review-grid"></div>
     </section>
+
+    <section id="progressView" class="view">
+      <div class="module-head"><div><p class="eyebrow">PROGRESS</p><h2>学习进度</h2></div></div>
+      <div id="progressPanel" class="dashboard"></div>
+    </section>
   </main>
 
   <footer><span>Awei English Patterns</span><p>中文意思 → 英语开关 → 句型骨架 → 场景输出。</p></footer>
@@ -100,6 +141,8 @@
   <script src="data/scenarios.js"></script>
   <script src="data/pronunciation.js"></script>
   <script src="data/tests.js"></script>
+  <script src="data/vocabulary.js"></script>
+  <script src="src/utils/audio.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

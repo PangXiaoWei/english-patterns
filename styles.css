@@ -75,8 +75,11 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 5px;
-  overflow-x: auto;
+  max-width: 820px;
+  overflow: visible;
 }
 
 .main-nav button, .mode-tabs button {
@@ -175,6 +178,167 @@ main {
 
 .today-card .primary-button {
   margin-top: auto;
+}
+
+.mission-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+.mission-summary, .mission-task, .vocab-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 16px 45px rgba(32, 52, 86, .10);
+}
+
+.mission-summary {
+  align-self: start;
+  padding: 22px;
+  position: sticky;
+  top: 14px;
+}
+
+.mission-summary h3 {
+  margin: 0 0 18px;
+  font-size: 23px;
+  line-height: 1.35;
+}
+
+.mission-summary strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 38px;
+}
+
+.mission-tasks {
+  display: grid;
+  gap: 12px;
+}
+
+.mission-task {
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.mission-task.done {
+  border-color: rgba(22, 131, 122, .35);
+  background: rgba(229, 245, 242, .88);
+}
+
+.mission-task b {
+  display: block;
+  font-size: 18px;
+}
+
+.mission-task span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 46px;
+}
+
+.vocab-card {
+  padding: 18px;
+}
+
+.vocab-card h3 {
+  margin: 16px 0 6px;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.vocab-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.vocab-card .meaning {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.example-line {
+  margin: 14px 0;
+  padding: 13px;
+  border-left: 4px solid var(--blue);
+  border-radius: 12px;
+  background: #f5f8ff;
+}
+
+.example-line b, .example-line span {
+  display: block;
+}
+
+.example-line span {
+  margin-top: 5px;
+  color: var(--muted);
+}
+
+.speak-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.speak-actions button {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: white;
+  color: var(--blue-dark);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.speak-actions button.active-action {
+  border-color: var(--teal);
+  color: white;
+  background: var(--teal);
+}
+
+.minimal-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(233,241,255,.78));
+}
+
+.couldnt-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 46px;
+}
+
+#couldntForm {
+  display: grid;
+  gap: 11px;
+  position: sticky;
+  top: 14px;
+}
+
+#couldntForm input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.couldnt-list {
+  display: grid;
+  gap: 12px;
 }
 
 .module-head {
@@ -801,7 +965,10 @@ footer p { margin: 0; }
   .dashboard { grid-template-columns: repeat(2, 1fr); }
   .today-grid { grid-template-columns: 1fr 1fr; }
   .topbar { height: auto; min-height: 76px; flex-wrap: wrap; padding: 12px 0; }
-  .main-nav { width: 100%; }
+  .main-nav { width: 100%; justify-content: flex-start; }
+  .mission-layout, .couldnt-layout { grid-template-columns: 1fr; }
+  .mission-summary, #couldntForm { position: static; }
+  .vocab-grid { grid-template-columns: 1fr 1fr; }
   .control-strip { grid-template-columns: 1fr; }
   .workspace { grid-template-columns: 1fr; }
   .lesson-list { border-right: 0; border-bottom: 1px solid var(--line); }
@@ -828,6 +995,7 @@ footer p { margin: 0; }
   .builder-grid { grid-template-columns: 1fr; }
   .dashboard { grid-template-columns: 1fr 1fr; }
   .today-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
   .verb-cards { grid-template-columns: 1fr; }
   .pron-row { grid-template-columns: 1fr auto auto; }
   .pron-row span { grid-column: 1 / 4; }

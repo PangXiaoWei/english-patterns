@@ -1,18 +1,18 @@
 window.SCENARIOS = [
-  ["intro","自我介绍",["name","from China","learning English","part-time job","speaking"],{
-    A2:["My name is Awei.","I am from China.","I am learning English.","I want to improve my speaking.","I am looking for part-time work."],
-    B1:["My name is Awei and I am from China.","I am learning English because I want to communicate better in daily life.","At the moment, I am improving my speaking and listening.","I am also interested in part-time work because I want more real-life English practice.","For me, confidence is very important."],
-    B1Plus:["My name is Awei, and I am currently focusing on improving my practical English.","Although I can understand some grammar, speaking naturally is still challenging for me.","I want to build confidence through daily conversations, volunteer work and part-time job situations.","For me, English is not just a subject; it is a tool for real communication."]
+  ["intro","自我介绍",["name","learning English","daily communication","work","speaking"],{
+    A2:["My name is Alex.","I am learning English.","I want to improve my speaking.","I want to communicate better.","I am interested in practical English."],
+    B1:["My name is Alex and I am learning practical English.","I want to communicate better in daily life.","At the moment, I am improving my speaking and listening.","I am also interested in work and volunteer situations.","For me, confidence is very important."],
+    B1Plus:["My name is Alex, and I am focusing on practical English.","Although I can understand some grammar, speaking naturally is still challenging.","I want to build confidence through daily conversations, volunteer tasks and work situations.","For me, English is not just a subject; it is a tool for real communication."]
   }],
   ["english-learning","我的英语学习",["A2+","B1","grammar","speaking","real communication"],{
     A2:["I study English every day.","Grammar is sometimes difficult.","Speaking is more difficult for me.","I want to practise real English.","I hope I can move up to B1."],
     B1:["I am trying to move from A2+ to B1.","My biggest problem is not vocabulary, but using the correct sentence structure when I speak.","I understand better when I compare English with Chinese thinking.","I want to practise speaking more often because I need real communication."],
     B1Plus:["My English learning goal is to become more confident in real-life communication.","I can understand many ideas in Chinese, but I often hesitate when I need to choose the right English structure.","That is why I focus on English switches, such as past tense, present perfect and verb-ing patterns."]
   }],
-  ["volunteer","我的志愿者经历",["City Mission","Fridays","shop","customers","tiring but rewarding"],{
-    A2:["I volunteer at City Mission on Fridays.","I help in the shop.","People speak fast.","It is difficult for me.","But it is good for my English."],
-    B1:["I do volunteer work at City Mission on Fridays.","I usually help in the shop and talk to customers.","At first, it was difficult because people spoke very fast.","But I think it is useful because I can practise real English.","For me, volunteering is tiring but rewarding."],
-    B1Plus:["Volunteering has become an important part of my life in Christchurch.","I work at City Mission on Fridays, mainly helping in the shop and listening to real conversations.","Although it is sometimes tiring, I find it rewarding because it gives me a chance to connect with local people.","Compared with classroom English, real-life English is faster and less predictable."]
+  ["volunteer","志愿者沟通",["volunteer","shop","customers","tiring but rewarding"],{
+    A2:["I volunteer at a local shop.","I help customers.","People sometimes speak fast.","It is difficult for me.","But it is good for my English."],
+    B1:["I do volunteer work at a local shop.","I usually help customers and listen to real conversations.","At first, it was difficult because people spoke very fast.","But I think it is useful because I can practise real English.","For me, volunteering is tiring but rewarding."],
+    B1Plus:["Volunteer work is useful for real-life English practice.","I sometimes help customers and listen to natural conversations.","Although it can be tiring, I find it rewarding because it gives me a chance to practise communication.","Compared with classroom English, real-life English is faster and less predictable."]
   }],
   ["weekend","我的周末",["Saturday","Sunday","study","rest","call a friend"],{
     A2:["On Saturday, I studied English.","I called a friend.","On Sunday, I rested at home.","I cooked lunch.","It was a simple weekend."],
@@ -35,8 +35,8 @@ window.SCENARIOS = [
     B1Plus:["Hello, I am calling to ask about the part-time position you advertised.","I am available on weekends and Friday afternoons, and I have volunteer experience where I worked with customers.","I believe I am reliable, punctual and willing to learn, so I would really appreciate the chance to attend an interview."]
   }],
   ["cancel-booking","取消餐厅预订",["booking","cancel","sorry","tonight","another time"],{
-    A2:["Hello, I have a booking tonight.","I need to cancel it.","I am sorry.","My name is Awei.","Thank you for your help."],
-    B1:["Hello, I am calling to cancel my booking for tonight.","The booking is under the name Awei.","I am sorry for the inconvenience.","I hope I can book another time later."],
+    A2:["Hello, I have a booking tonight.","I need to cancel it.","I am sorry.","The booking is under my name.","Thank you for your help."],
+    B1:["Hello, I am calling to cancel my booking for tonight.","The booking is under my name.","I am sorry for the inconvenience.","I hope I can book another time later."],
     B1Plus:["Hello, I am calling because I need to cancel my booking for tonight.","The reservation is under the name Awei.","I am sorry for the short notice and any inconvenience this may cause.","I would be happy to book again another time."]
   }],
   ["doctor","给医生预约",["appointment","available","morning","problem","thank you"],{
