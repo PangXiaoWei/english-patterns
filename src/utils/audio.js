@@ -209,7 +209,10 @@
         const audio = new Audio(audioPath);
         currentAudio = audio;
         audio.playbackRate = slow ? 0.82 : 1;
-        audio.onended = () => resolve(true);
+        audio.onended = () => {
+          if (token === playbackToken) currentAudio = null;
+          resolve(true);
+        };
         audio.onerror = () => {
           if (token === playbackToken) currentAudio = null;
           resolve(false);
