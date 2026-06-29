@@ -1,1 +1,3852 @@
-{}
+{
+  "accept.word": {
+    "text": "accept",
+    "path": "public/audio/en-us/words/accept.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "accept.example": {
+    "text": "I accepted the volunteer shift.",
+    "path": "public/audio/en-us/examples/accept-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "improve.word": {
+    "text": "improve",
+    "path": "public/audio/en-us/words/improve.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "improve.example": {
+    "text": "I want to improve my speaking.",
+    "path": "public/audio/en-us/examples/improve-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "explain.word": {
+    "text": "explain",
+    "path": "public/audio/en-us/words/explain.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "explain.example": {
+    "text": "Can you explain this again?",
+    "path": "public/audio/en-us/examples/explain-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "repeat.word": {
+    "text": "repeat",
+    "path": "public/audio/en-us/words/repeat.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "repeat.example": {
+    "text": "Could you repeat that, please?",
+    "path": "public/audio/en-us/examples/repeat-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "permission.word": {
+    "text": "permission",
+    "path": "public/audio/en-us/words/permission.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "permission.example": {
+    "text": "I do not have permission to open this file.",
+    "path": "public/audio/en-us/examples/permission-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "restart.word": {
+    "text": "restart",
+    "path": "public/audio/en-us/words/restart.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "restart.example": {
+    "text": "Please restart the computer and try again.",
+    "path": "public/audio/en-us/examples/restart-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "reliable.word": {
+    "text": "reliable",
+    "path": "public/audio/en-us/words/reliable.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "reliable.example": {
+    "text": "I am reliable and I always arrive on time.",
+    "path": "public/audio/en-us/examples/reliable-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "available.word": {
+    "text": "available",
+    "path": "public/audio/en-us/words/available.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "available.example": {
+    "text": "I am available on Friday afternoon.",
+    "path": "public/audio/en-us/examples/available-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "appointment.word": {
+    "text": "appointment",
+    "path": "public/audio/en-us/words/appointment.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "appointment.example": {
+    "text": "I would like to make an appointment.",
+    "path": "public/audio/en-us/examples/appointment-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "receipt.word": {
+    "text": "receipt",
+    "path": "public/audio/en-us/words/receipt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "receipt.example": {
+    "text": "Can I have a receipt, please?",
+    "path": "public/audio/en-us/examples/receipt-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "refund.word": {
+    "text": "refund",
+    "path": "public/audio/en-us/words/refund.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "refund.example": {
+    "text": "I would like to ask for a refund.",
+    "path": "public/audio/en-us/examples/refund-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "balance.word": {
+    "text": "balance",
+    "path": "public/audio/en-us/words/balance.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "balance.example": {
+    "text": "Can you check my balance?",
+    "path": "public/audio/en-us/examples/balance-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "platform.word": {
+    "text": "platform",
+    "path": "public/audio/en-us/words/platform.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "platform.example": {
+    "text": "Which platform does the train leave from?",
+    "path": "public/audio/en-us/examples/platform-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "dizzy.word": {
+    "text": "dizzy",
+    "path": "public/audio/en-us/words/dizzy.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "dizzy.example": {
+    "text": "I feel dizzy today.",
+    "path": "public/audio/en-us/examples/dizzy-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "comfortable.word": {
+    "text": "comfortable",
+    "path": "public/audio/en-us/words/comfortable.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "comfortable.example": {
+    "text": "The room is clean and comfortable.",
+    "path": "public/audio/en-us/examples/comfortable-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "check-in.word": {
+    "text": "check in",
+    "path": "public/audio/en-us/phrases/check-in.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "check-in.example": {
+    "text": "I need to check in at the front desk.",
+    "path": "public/audio/en-us/examples/check-in-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "look-after.word": {
+    "text": "look after",
+    "path": "public/audio/en-us/phrases/look-after.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "look-after.example": {
+    "text": "I can look after the front desk for ten minutes.",
+    "path": "public/audio/en-us/examples/look-after-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "fill-out.word": {
+    "text": "fill out",
+    "path": "public/audio/en-us/phrases/fill-out.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "fill-out.example": {
+    "text": "Please fill out this form.",
+    "path": "public/audio/en-us/examples/fill-out-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "log-in.word": {
+    "text": "log in",
+    "path": "public/audio/en-us/phrases/log-in.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "log-in.example": {
+    "text": "I cannot log in to my account.",
+    "path": "public/audio/en-us/examples/log-in-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "set-up.word": {
+    "text": "set up",
+    "path": "public/audio/en-us/phrases/set-up.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "set-up.example": {
+    "text": "I can help you set up the printer.",
+    "path": "public/audio/en-us/examples/set-up-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "run-into.word": {
+    "text": "run into",
+    "path": "public/audio/en-us/phrases/run-into.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "run-into.example": {
+    "text": "I ran into a problem with the update.",
+    "path": "public/audio/en-us/examples/run-into-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "could-you-say-that-again.word": {
+    "text": "Could you say that again?",
+    "path": "public/audio/en-us/words/could-you-say-that-again.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "could-you-say-that-again.example": {
+    "text": "Could you say that again, please?",
+    "path": "public/audio/en-us/examples/could-you-say-that-again-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "i-am-not-sure-how-to-say-this.word": {
+    "text": "I am not sure how to say this.",
+    "path": "public/audio/en-us/words/i-am-not-sure-how-to-say-this.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "i-am-not-sure-how-to-say-this.example": {
+    "text": "I am not sure how to say this in English.",
+    "path": "public/audio/en-us/examples/i-am-not-sure-how-to-say-this-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "could-you-show-me-an-example.word": {
+    "text": "Could you show me an example?",
+    "path": "public/audio/en-us/words/could-you-show-me-an-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "could-you-show-me-an-example.example": {
+    "text": "Could you show me an example?",
+    "path": "public/audio/en-us/examples/could-you-show-me-an-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "the-wifi-is-not-working.word": {
+    "text": "The WiFi is not working.",
+    "path": "public/audio/en-us/words/the-wifi-is-not-working.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "the-wifi-is-not-working.example": {
+    "text": "The WiFi is not working on my laptop.",
+    "path": "public/audio/en-us/examples/the-wifi-is-not-working-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "i-would-like-to-apply-for-this-role.word": {
+    "text": "I would like to apply for this role.",
+    "path": "public/audio/en-us/words/i-would-like-to-apply-for-this-role.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "i-would-like-to-apply-for-this-role.example": {
+    "text": "I would like to apply for this role.",
+    "path": "public/audio/en-us/examples/i-would-like-to-apply-for-this-role-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "i-can-help-at-the-counter.word": {
+    "text": "I can help at the counter.",
+    "path": "public/audio/en-us/words/i-can-help-at-the-counter.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "i-can-help-at-the-counter.example": {
+    "text": "I can help at the counter today.",
+    "path": "public/audio/en-us/examples/i-can-help-at-the-counter-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "where-can-i-find-this-item.word": {
+    "text": "Where can I find this item?",
+    "path": "public/audio/en-us/words/where-can-i-find-this-item.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "where-can-i-find-this-item.example": {
+    "text": "Where can I find this item?",
+    "path": "public/audio/en-us/examples/where-can-i-find-this-item-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "i-need-to-report-a-problem.word": {
+    "text": "I need to report a problem.",
+    "path": "public/audio/en-us/words/i-need-to-report-a-problem.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "i-need-to-report-a-problem.example": {
+    "text": "I need to report a problem with the system.",
+    "path": "public/audio/en-us/examples/i-need-to-report-a-problem-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "could-i-pay-by-card.word": {
+    "text": "Could I pay by card?",
+    "path": "public/audio/en-us/words/could-i-pay-by-card.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "could-i-pay-by-card.example": {
+    "text": "Could I pay by card?",
+    "path": "public/audio/en-us/examples/could-i-pay-by-card-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "work-walk.a": {
+    "text": "work",
+    "path": "public/audio/en-us/minimal-pairs/work.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "work-walk.b": {
+    "text": "walk",
+    "path": "public/audio/en-us/minimal-pairs/walk.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "live-leave.a": {
+    "text": "live",
+    "path": "public/audio/en-us/minimal-pairs/live.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "live-leave.b": {
+    "text": "leave",
+    "path": "public/audio/en-us/minimal-pairs/leave.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "ship-sheep.a": {
+    "text": "ship",
+    "path": "public/audio/en-us/minimal-pairs/ship.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "ship-sheep.b": {
+    "text": "sheep",
+    "path": "public/audio/en-us/minimal-pairs/sheep.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "full-fool.a": {
+    "text": "full",
+    "path": "public/audio/en-us/minimal-pairs/full.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "full-fool.b": {
+    "text": "fool",
+    "path": "public/audio/en-us/minimal-pairs/fool.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "bed-bad.a": {
+    "text": "bed",
+    "path": "public/audio/en-us/minimal-pairs/bed.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "bed-bad.b": {
+    "text": "bad",
+    "path": "public/audio/en-us/minimal-pairs/bad.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "sit-seat.a": {
+    "text": "sit",
+    "path": "public/audio/en-us/minimal-pairs/sit.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "sit-seat.b": {
+    "text": "seat",
+    "path": "public/audio/en-us/minimal-pairs/seat.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "bit-beat.a": {
+    "text": "bit",
+    "path": "public/audio/en-us/minimal-pairs/bit.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "bit-beat.b": {
+    "text": "beat",
+    "path": "public/audio/en-us/minimal-pairs/beat.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "pull-pool.a": {
+    "text": "pull",
+    "path": "public/audio/en-us/minimal-pairs/pull.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "pull-pool.b": {
+    "text": "pool",
+    "path": "public/audio/en-us/minimal-pairs/pool.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "rice-rise.a": {
+    "text": "rice",
+    "path": "public/audio/en-us/minimal-pairs/rice.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "rice-rise.b": {
+    "text": "rise",
+    "path": "public/audio/en-us/minimal-pairs/rise.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "light-right.a": {
+    "text": "light",
+    "path": "public/audio/en-us/minimal-pairs/light.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "light-right.b": {
+    "text": "right",
+    "path": "public/audio/en-us/minimal-pairs/right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "very-wary.a": {
+    "text": "very",
+    "path": "public/audio/en-us/minimal-pairs/very.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "very-wary.b": {
+    "text": "wary",
+    "path": "public/audio/en-us/minimal-pairs/wary.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "thin-sin.a": {
+    "text": "thin",
+    "path": "public/audio/en-us/minimal-pairs/thin.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "thin-sin.b": {
+    "text": "sin",
+    "path": "public/audio/en-us/minimal-pairs/sin.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "think-sink.a": {
+    "text": "think",
+    "path": "public/audio/en-us/minimal-pairs/think.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "think-sink.b": {
+    "text": "sink",
+    "path": "public/audio/en-us/minimal-pairs/sink.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "three-tree.a": {
+    "text": "three",
+    "path": "public/audio/en-us/minimal-pairs/three.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "three-tree.b": {
+    "text": "tree",
+    "path": "public/audio/en-us/minimal-pairs/tree.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "cheap-chip.a": {
+    "text": "cheap",
+    "path": "public/audio/en-us/minimal-pairs/cheap.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "cheap-chip.b": {
+    "text": "chip",
+    "path": "public/audio/en-us/minimal-pairs/chip.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "cap-cup.a": {
+    "text": "cap",
+    "path": "public/audio/en-us/minimal-pairs/cap.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "cap-cup.b": {
+    "text": "cup",
+    "path": "public/audio/en-us/minimal-pairs/cup.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "not-note.a": {
+    "text": "not",
+    "path": "public/audio/en-us/minimal-pairs/not.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "not-note.b": {
+    "text": "note",
+    "path": "public/audio/en-us/minimal-pairs/note.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "cut-cart.a": {
+    "text": "cut",
+    "path": "public/audio/en-us/minimal-pairs/cut.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "cut-cart.b": {
+    "text": "cart",
+    "path": "public/audio/en-us/minimal-pairs/cart.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "world-word.a": {
+    "text": "world",
+    "path": "public/audio/en-us/minimal-pairs/world.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "world-word.b": {
+    "text": "word",
+    "path": "public/audio/en-us/minimal-pairs/word.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "clothes-close.a": {
+    "text": "clothes",
+    "path": "public/audio/en-us/minimal-pairs/clothes.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "clothes-close.b": {
+    "text": "close",
+    "path": "public/audio/en-us/minimal-pairs/close.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-28"
+  },
+  "lesson.subject-verb.example.1": {
+    "text": "I study English every day.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.example.2": {
+    "text": "I volunteer at City Mission on Fridays.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.example.3": {
+    "text": "The teacher explained the grammar.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.mistake.1.wrong": {
+    "text": "Today I want ask teacher.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.mistake.1.right": {
+    "text": "I want to ask the teacher today.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.drill.1.option.1": {
+    "text": "Today I want ask teacher.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.drill.1.option.2": {
+    "text": "I want to ask the teacher today.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.drill.1.option.3": {
+    "text": "I want asking teacher today.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.drill.1.answer": {
+    "text": "I want to ask the teacher today.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.subject-verb.speaking.prompt": {
+    "text": "Say three things you do every week.",
+    "path": "public/audio/en-us/full-site/lessons/subject-verb-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.example.1": {
+    "text": "I went to City Mission last Friday.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.example.2": {
+    "text": "I called Ben yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.example.3": {
+    "text": "I studied English last night.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.mistake.1.wrong": {
+    "text": "I go to City Mission last Friday.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.mistake.1.right": {
+    "text": "I went to City Mission last Friday.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.drill.1.option.1": {
+    "text": "I call Ben yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.drill.1.option.2": {
+    "text": "I called Ben yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.drill.1.option.3": {
+    "text": "I have called Ben yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.drill.1.answer": {
+    "text": "I called Ben yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-simple.speaking.prompt": {
+    "text": "Say three things you did last weekend.",
+    "path": "public/audio/en-us/full-site/lessons/past-simple-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.example.1": {
+    "text": "I was at City Mission last Friday.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.example.2": {
+    "text": "I was tired yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.example.3": {
+    "text": "They were in class.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.mistake.1.wrong": {
+    "text": "I at City Mission yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.mistake.1.right": {
+    "text": "I was at City Mission yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.drill.1.option.1": {
+    "text": "I tired yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.drill.1.option.2": {
+    "text": "I was tired yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.drill.1.option.3": {
+    "text": "I were tired yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.drill.1.answer": {
+    "text": "I was tired yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.was-were.speaking.prompt": {
+    "text": "Say where you were yesterday afternoon.",
+    "path": "public/audio/en-us/full-site/lessons/was-were-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.example.1": {
+    "text": "I was volunteering when he called me.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.example.2": {
+    "text": "She was talking to the manager.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.example.3": {
+    "text": "They were working in the shop.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.mistake.1.wrong": {
+    "text": "I was volunteer when he called me.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.mistake.1.right": {
+    "text": "I was volunteering when he called me.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.drill.1.option.1": {
+    "text": "I studied when he called me.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.drill.1.option.2": {
+    "text": "I was studying when he called me.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.drill.1.option.3": {
+    "text": "I have studied when he called me.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.drill.1.answer": {
+    "text": "I was studying when he called me.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.past-continuous.speaking.prompt": {
+    "text": "Say what you were doing when someone called you.",
+    "path": "public/audio/en-us/full-site/lessons/past-continuous-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.example.1": {
+    "text": "I've been to Japan.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.example.2": {
+    "text": "I've done volunteer work before.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.example.3": {
+    "text": "Have you ever eaten Indian food?",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.mistake.1.wrong": {
+    "text": "I went to Japan before.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.mistake.1.right": {
+    "text": "I've been to Japan before.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.drill.1.option.1": {
+    "text": "I did volunteer work before.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.drill.1.option.2": {
+    "text": "I've done volunteer work before.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.drill.1.option.3": {
+    "text": "I do volunteer work before.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.drill.1.answer": {
+    "text": "I've done volunteer work before.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.present-perfect-experience.speaking.prompt": {
+    "text": "Say three things you have done before.",
+    "path": "public/audio/en-us/full-site/lessons/present-perfect-experience-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.example.1": {
+    "text": "I want to improve my speaking.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.example.2": {
+    "text": "I need to practise English.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.example.3": {
+    "text": "I'm willing to learn.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.mistake.1.wrong": {
+    "text": "I want to improving my speaking.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.mistake.1.right": {
+    "text": "I want to improve my speaking.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.drill.1.option.1": {
+    "text": "I want improving my speaking.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.drill.1.option.2": {
+    "text": "I want to improve my speaking.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.drill.1.option.3": {
+    "text": "I want improve my speaking.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.drill.1.answer": {
+    "text": "I want to improve my speaking.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.to-verb.speaking.prompt": {
+    "text": "Say what you want to improve this month.",
+    "path": "public/audio/en-us/full-site/lessons/to-verb-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.example.1": {
+    "text": "I like helping people.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.example.2": {
+    "text": "I'm interested in learning practical English.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.example.3": {
+    "text": "Thank you for helping me.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.mistake.1.wrong": {
+    "text": "I'm interested in learn English.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.mistake.1.right": {
+    "text": "I'm interested in learning English.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.drill.1.option.1": {
+    "text": "I like help people.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.drill.1.option.2": {
+    "text": "I like helping people.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.drill.1.option.3": {
+    "text": "I like to helping people.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.drill.1.answer": {
+    "text": "I like helping people.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.ing-as-thing.speaking.prompt": {
+    "text": "Say three things you enjoy doing.",
+    "path": "public/audio/en-us/full-site/lessons/ing-as-thing-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.example.1": {
+    "text": "He likes coffee.",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.example.2": {
+    "text": "She works in a shop.",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.example.3": {
+    "text": "My mother lives in Nanjing.",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.mistake.1.wrong": {
+    "text": "Does he likes coffee?",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.mistake.1.right": {
+    "text": "Does he like coffee?",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.drill.1.option.1": {
+    "text": "She work in a shop.",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.drill.1.option.2": {
+    "text": "She works in a shop.",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.drill.1.option.3": {
+    "text": "She working in a shop.",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.drill.1.answer": {
+    "text": "She works in a shop.",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.third-person-s.speaking.prompt": {
+    "text": "Say three things one person in your life does every week.",
+    "path": "public/audio/en-us/full-site/lessons/third-person-s-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.example.1": {
+    "text": "Do you like coffee?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.example.2": {
+    "text": "Does he work here?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.example.3": {
+    "text": "Did you call Ben?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.mistake.1.wrong": {
+    "text": "Did you went there?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.mistake.1.right": {
+    "text": "Did you go there?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.drill.1.option.1": {
+    "text": "What did you ate yesterday?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.drill.1.option.2": {
+    "text": "What did you eat yesterday?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.drill.1.option.3": {
+    "text": "What do you ate yesterday?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.drill.1.answer": {
+    "text": "What did you eat yesterday?",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.questions-do.speaking.prompt": {
+    "text": "Ask three questions about yesterday.",
+    "path": "public/audio/en-us/full-site/lessons/questions-do-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.example.1": {
+    "text": "I have too much work.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.example.2": {
+    "text": "I have too many questions.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.example.3": {
+    "text": "I need a little time.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.mistake.1.wrong": {
+    "text": "I have too many work.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.mistake.1.right": {
+    "text": "I have too much work.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.drill.1.option.1": {
+    "text": "I have too much questions.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.drill.1.option.2": {
+    "text": "I have too many questions.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.drill.1.option.3": {
+    "text": "I have enough questions.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.drill.1.answer": {
+    "text": "I have too many questions.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.quantity.speaking.prompt": {
+    "text": "Say what you have too much or too many of.",
+    "path": "public/audio/en-us/full-site/lessons/quantity-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.example.1": {
+    "text": "English is easier than German.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.example.2": {
+    "text": "This is the most important thing.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.example.3": {
+    "text": "My answer is different from your answer.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.mistake.1.wrong": {
+    "text": "My answer is different with your answer.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.mistake.1.right": {
+    "text": "My answer is different from your answer.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.drill.1.option.1": {
+    "text": "My answer is different with your answer.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.drill.1.option.2": {
+    "text": "My answer is different from your answer.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.drill.1.option.3": {
+    "text": "My answer different than your answer.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.drill.1.answer": {
+    "text": "My answer is different from your answer.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.comparison.speaking.prompt": {
+    "text": "Compare classroom English and real-life English.",
+    "path": "public/audio/en-us/full-site/lessons/comparison-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.example.1": {
+    "text": "I think speaking is more important than writing now.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-example-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.example.2": {
+    "text": "I want to improve my speaking because I need real communication.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-example-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.example.3": {
+    "text": "Although grammar is difficult, I can understand it better with Chinese thinking.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-example-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.mistake.1.wrong": {
+    "text": "Because I need real communication, so I want improve speaking.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-mistake-1-wrong.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.mistake.1.right": {
+    "text": "I want to improve my speaking because I need real communication.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-mistake-1-right.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.drill.1.option.1": {
+    "text": "I want to improve my speaking because I need real communication.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-drill-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.drill.1.option.2": {
+    "text": "Because I need real communication so I want improve speaking.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-drill-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.drill.1.option.3": {
+    "text": "I want improving speaking because I need real communication.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-drill-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.drill.1.answer": {
+    "text": "I want to improve my speaking because I need real communication.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-drill-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "lesson.opinions.speaking.prompt": {
+    "text": "Give your opinion about learning English.",
+    "path": "public/audio/en-us/full-site/lessons/opinions-speaking-prompt.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.study.study": {
+    "text": "study",
+    "path": "public/audio/en-us/full-site/verbs/study-study.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.study.studies": {
+    "text": "studies",
+    "path": "public/audio/en-us/full-site/verbs/study-studies.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.study.studying": {
+    "text": "studying",
+    "path": "public/audio/en-us/full-site/verbs/study-studying.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.study.studied": {
+    "text": "studied",
+    "path": "public/audio/en-us/full-site/verbs/study-studied.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.study.example": {
+    "text": "I study English every day.",
+    "path": "public/audio/en-us/full-site/verbs/study-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.work.work": {
+    "text": "work",
+    "path": "public/audio/en-us/full-site/verbs/work-work.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.work.works": {
+    "text": "works",
+    "path": "public/audio/en-us/full-site/verbs/work-works.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.work.working": {
+    "text": "working",
+    "path": "public/audio/en-us/full-site/verbs/work-working.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.work.worked": {
+    "text": "worked",
+    "path": "public/audio/en-us/full-site/verbs/work-worked.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.work.example": {
+    "text": "She works in a shop.",
+    "path": "public/audio/en-us/full-site/verbs/work-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.volunteer.volunteer": {
+    "text": "volunteer",
+    "path": "public/audio/en-us/full-site/verbs/volunteer-volunteer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.volunteer.volunteers": {
+    "text": "volunteers",
+    "path": "public/audio/en-us/full-site/verbs/volunteer-volunteers.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.volunteer.volunteering": {
+    "text": "volunteering",
+    "path": "public/audio/en-us/full-site/verbs/volunteer-volunteering.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.volunteer.volunteered": {
+    "text": "volunteered",
+    "path": "public/audio/en-us/full-site/verbs/volunteer-volunteered.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.volunteer.example": {
+    "text": "I volunteer on Fridays.",
+    "path": "public/audio/en-us/full-site/verbs/volunteer-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.help.help": {
+    "text": "help",
+    "path": "public/audio/en-us/full-site/verbs/help-help.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.help.helps": {
+    "text": "helps",
+    "path": "public/audio/en-us/full-site/verbs/help-helps.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.help.helping": {
+    "text": "helping",
+    "path": "public/audio/en-us/full-site/verbs/help-helping.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.help.helped": {
+    "text": "helped",
+    "path": "public/audio/en-us/full-site/verbs/help-helped.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.help.example": {
+    "text": "I like helping people.",
+    "path": "public/audio/en-us/full-site/verbs/help-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.call.call": {
+    "text": "call",
+    "path": "public/audio/en-us/full-site/verbs/call-call.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.call.calls": {
+    "text": "calls",
+    "path": "public/audio/en-us/full-site/verbs/call-calls.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.call.calling": {
+    "text": "calling",
+    "path": "public/audio/en-us/full-site/verbs/call-calling.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.call.called": {
+    "text": "called",
+    "path": "public/audio/en-us/full-site/verbs/call-called.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.call.example": {
+    "text": "I called Ben yesterday.",
+    "path": "public/audio/en-us/full-site/verbs/call-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.go.go": {
+    "text": "go",
+    "path": "public/audio/en-us/full-site/verbs/go-go.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.go.goes": {
+    "text": "goes",
+    "path": "public/audio/en-us/full-site/verbs/go-goes.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.go.going": {
+    "text": "going",
+    "path": "public/audio/en-us/full-site/verbs/go-going.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.go.went": {
+    "text": "went",
+    "path": "public/audio/en-us/full-site/verbs/go-went.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.go.been-gone": {
+    "text": "been / gone",
+    "path": "public/audio/en-us/full-site/verbs/go-been-gone.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.go.example": {
+    "text": "I've been to Japan.",
+    "path": "public/audio/en-us/full-site/verbs/go-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.eat.eat": {
+    "text": "eat",
+    "path": "public/audio/en-us/full-site/verbs/eat-eat.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.eat.eats": {
+    "text": "eats",
+    "path": "public/audio/en-us/full-site/verbs/eat-eats.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.eat.eating": {
+    "text": "eating",
+    "path": "public/audio/en-us/full-site/verbs/eat-eating.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.eat.ate": {
+    "text": "ate",
+    "path": "public/audio/en-us/full-site/verbs/eat-ate.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.eat.eaten": {
+    "text": "eaten",
+    "path": "public/audio/en-us/full-site/verbs/eat-eaten.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.eat.example": {
+    "text": "Have you eaten lunch?",
+    "path": "public/audio/en-us/full-site/verbs/eat-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.see.see": {
+    "text": "see",
+    "path": "public/audio/en-us/full-site/verbs/see-see.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.see.sees": {
+    "text": "sees",
+    "path": "public/audio/en-us/full-site/verbs/see-sees.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.see.seeing": {
+    "text": "seeing",
+    "path": "public/audio/en-us/full-site/verbs/see-seeing.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.see.saw": {
+    "text": "saw",
+    "path": "public/audio/en-us/full-site/verbs/see-saw.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.see.seen": {
+    "text": "seen",
+    "path": "public/audio/en-us/full-site/verbs/see-seen.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.see.example": {
+    "text": "I've seen this movie.",
+    "path": "public/audio/en-us/full-site/verbs/see-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.find.find": {
+    "text": "find",
+    "path": "public/audio/en-us/full-site/verbs/find-find.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.find.finds": {
+    "text": "finds",
+    "path": "public/audio/en-us/full-site/verbs/find-finds.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.find.finding": {
+    "text": "finding",
+    "path": "public/audio/en-us/full-site/verbs/find-finding.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.find.found": {
+    "text": "found",
+    "path": "public/audio/en-us/full-site/verbs/find-found.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.find.example": {
+    "text": "I found something interesting.",
+    "path": "public/audio/en-us/full-site/verbs/find-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.buy.buy": {
+    "text": "buy",
+    "path": "public/audio/en-us/full-site/verbs/buy-buy.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.buy.buys": {
+    "text": "buys",
+    "path": "public/audio/en-us/full-site/verbs/buy-buys.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.buy.buying": {
+    "text": "buying",
+    "path": "public/audio/en-us/full-site/verbs/buy-buying.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.buy.bought": {
+    "text": "bought",
+    "path": "public/audio/en-us/full-site/verbs/buy-bought.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.buy.example": {
+    "text": "I bought milk last week.",
+    "path": "public/audio/en-us/full-site/verbs/buy-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.lend.lend": {
+    "text": "lend",
+    "path": "public/audio/en-us/full-site/verbs/lend-lend.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.lend.lends": {
+    "text": "lends",
+    "path": "public/audio/en-us/full-site/verbs/lend-lends.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.lend.lending": {
+    "text": "lending",
+    "path": "public/audio/en-us/full-site/verbs/lend-lending.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.lend.lent": {
+    "text": "lent",
+    "path": "public/audio/en-us/full-site/verbs/lend-lent.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.lend.example": {
+    "text": "I lent my friend a book.",
+    "path": "public/audio/en-us/full-site/verbs/lend-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.borrow.borrow": {
+    "text": "borrow",
+    "path": "public/audio/en-us/full-site/verbs/borrow-borrow.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.borrow.borrows": {
+    "text": "borrows",
+    "path": "public/audio/en-us/full-site/verbs/borrow-borrows.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.borrow.borrowing": {
+    "text": "borrowing",
+    "path": "public/audio/en-us/full-site/verbs/borrow-borrowing.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.borrow.borrowed": {
+    "text": "borrowed",
+    "path": "public/audio/en-us/full-site/verbs/borrow-borrowed.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.borrow.example": {
+    "text": "I borrowed a pen from my classmate.",
+    "path": "public/audio/en-us/full-site/verbs/borrow-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.rent.rent": {
+    "text": "rent",
+    "path": "public/audio/en-us/full-site/verbs/rent-rent.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.rent.rents": {
+    "text": "rents",
+    "path": "public/audio/en-us/full-site/verbs/rent-rents.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.rent.renting": {
+    "text": "renting",
+    "path": "public/audio/en-us/full-site/verbs/rent-renting.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.rent.rented": {
+    "text": "rented",
+    "path": "public/audio/en-us/full-site/verbs/rent-rented.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.rent.example": {
+    "text": "I rented a room.",
+    "path": "public/audio/en-us/full-site/verbs/rent-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.spend.spend": {
+    "text": "spend",
+    "path": "public/audio/en-us/full-site/verbs/spend-spend.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.spend.spends": {
+    "text": "spends",
+    "path": "public/audio/en-us/full-site/verbs/spend-spends.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.spend.spending": {
+    "text": "spending",
+    "path": "public/audio/en-us/full-site/verbs/spend-spending.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.spend.spent": {
+    "text": "spent",
+    "path": "public/audio/en-us/full-site/verbs/spend-spent.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.spend.example": {
+    "text": "I spent two hours studying.",
+    "path": "public/audio/en-us/full-site/verbs/spend-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.cost.cost": {
+    "text": "cost",
+    "path": "public/audio/en-us/full-site/verbs/cost-cost.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.cost.costs": {
+    "text": "costs",
+    "path": "public/audio/en-us/full-site/verbs/cost-costs.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.cost.costing": {
+    "text": "costing",
+    "path": "public/audio/en-us/full-site/verbs/cost-costing.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.cost.example": {
+    "text": "The lunchbox cost ten dollars.",
+    "path": "public/audio/en-us/full-site/verbs/cost-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.learn.learn": {
+    "text": "learn",
+    "path": "public/audio/en-us/full-site/verbs/learn-learn.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.learn.learns": {
+    "text": "learns",
+    "path": "public/audio/en-us/full-site/verbs/learn-learns.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.learn.learning": {
+    "text": "learning",
+    "path": "public/audio/en-us/full-site/verbs/learn-learning.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.learn.learned": {
+    "text": "learned",
+    "path": "public/audio/en-us/full-site/verbs/learn-learned.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.learn.example": {
+    "text": "I'm learning practical English.",
+    "path": "public/audio/en-us/full-site/verbs/learn-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.improve.improve": {
+    "text": "improve",
+    "path": "public/audio/en-us/full-site/verbs/improve-improve.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.improve.improves": {
+    "text": "improves",
+    "path": "public/audio/en-us/full-site/verbs/improve-improves.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.improve.improving": {
+    "text": "improving",
+    "path": "public/audio/en-us/full-site/verbs/improve-improving.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.improve.improved": {
+    "text": "improved",
+    "path": "public/audio/en-us/full-site/verbs/improve-improved.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.improve.example": {
+    "text": "I want to improve my speaking.",
+    "path": "public/audio/en-us/full-site/verbs/improve-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.practise.practise": {
+    "text": "practise",
+    "path": "public/audio/en-us/full-site/verbs/practise-practise.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.practise.practises": {
+    "text": "practises",
+    "path": "public/audio/en-us/full-site/verbs/practise-practises.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.practise.practising": {
+    "text": "practising",
+    "path": "public/audio/en-us/full-site/verbs/practise-practising.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.practise.practised": {
+    "text": "practised",
+    "path": "public/audio/en-us/full-site/verbs/practise-practised.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.practise.example": {
+    "text": "I need to practise English.",
+    "path": "public/audio/en-us/full-site/verbs/practise-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.talk.talk": {
+    "text": "talk",
+    "path": "public/audio/en-us/full-site/verbs/talk-talk.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.talk.talks": {
+    "text": "talks",
+    "path": "public/audio/en-us/full-site/verbs/talk-talks.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.talk.talking": {
+    "text": "talking",
+    "path": "public/audio/en-us/full-site/verbs/talk-talking.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.talk.talked": {
+    "text": "talked",
+    "path": "public/audio/en-us/full-site/verbs/talk-talked.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.talk.example": {
+    "text": "She was talking to the manager.",
+    "path": "public/audio/en-us/full-site/verbs/talk-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.write.write": {
+    "text": "write",
+    "path": "public/audio/en-us/full-site/verbs/write-write.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.write.writes": {
+    "text": "writes",
+    "path": "public/audio/en-us/full-site/verbs/write-writes.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.write.writing": {
+    "text": "writing",
+    "path": "public/audio/en-us/full-site/verbs/write-writing.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.write.wrote": {
+    "text": "wrote",
+    "path": "public/audio/en-us/full-site/verbs/write-wrote.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.write.written": {
+    "text": "written",
+    "path": "public/audio/en-us/full-site/verbs/write-written.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.write.example": {
+    "text": "I have written the email.",
+    "path": "public/audio/en-us/full-site/verbs/write-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.read.read": {
+    "text": "read",
+    "path": "public/audio/en-us/full-site/verbs/read-read.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.read.reads": {
+    "text": "reads",
+    "path": "public/audio/en-us/full-site/verbs/read-reads.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.read.reading": {
+    "text": "reading",
+    "path": "public/audio/en-us/full-site/verbs/read-reading.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.read.example": {
+    "text": "I read the notice this morning.",
+    "path": "public/audio/en-us/full-site/verbs/read-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.make.make": {
+    "text": "make",
+    "path": "public/audio/en-us/full-site/verbs/make-make.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.make.makes": {
+    "text": "makes",
+    "path": "public/audio/en-us/full-site/verbs/make-makes.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.make.making": {
+    "text": "making",
+    "path": "public/audio/en-us/full-site/verbs/make-making.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.make.made": {
+    "text": "made",
+    "path": "public/audio/en-us/full-site/verbs/make-made.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.make.example": {
+    "text": "I made an appointment.",
+    "path": "public/audio/en-us/full-site/verbs/make-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.do.do": {
+    "text": "do",
+    "path": "public/audio/en-us/full-site/verbs/do-do.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.do.does": {
+    "text": "does",
+    "path": "public/audio/en-us/full-site/verbs/do-does.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.do.doing": {
+    "text": "doing",
+    "path": "public/audio/en-us/full-site/verbs/do-doing.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.do.did": {
+    "text": "did",
+    "path": "public/audio/en-us/full-site/verbs/do-did.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.do.done": {
+    "text": "done",
+    "path": "public/audio/en-us/full-site/verbs/do-done.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.do.example": {
+    "text": "I've done volunteer work before.",
+    "path": "public/audio/en-us/full-site/verbs/do-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.have.have": {
+    "text": "have",
+    "path": "public/audio/en-us/full-site/verbs/have-have.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.have.has": {
+    "text": "has",
+    "path": "public/audio/en-us/full-site/verbs/have-has.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.have.having": {
+    "text": "having",
+    "path": "public/audio/en-us/full-site/verbs/have-having.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.have.had": {
+    "text": "had",
+    "path": "public/audio/en-us/full-site/verbs/have-had.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.have.example": {
+    "text": "I had lunch at noon.",
+    "path": "public/audio/en-us/full-site/verbs/have-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.give.give": {
+    "text": "give",
+    "path": "public/audio/en-us/full-site/verbs/give-give.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.give.gives": {
+    "text": "gives",
+    "path": "public/audio/en-us/full-site/verbs/give-gives.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.give.giving": {
+    "text": "giving",
+    "path": "public/audio/en-us/full-site/verbs/give-giving.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.give.gave": {
+    "text": "gave",
+    "path": "public/audio/en-us/full-site/verbs/give-gave.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.give.given": {
+    "text": "given",
+    "path": "public/audio/en-us/full-site/verbs/give-given.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.give.example": {
+    "text": "She has given me advice.",
+    "path": "public/audio/en-us/full-site/verbs/give-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.ride.ride": {
+    "text": "ride",
+    "path": "public/audio/en-us/full-site/verbs/ride-ride.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.ride.rides": {
+    "text": "rides",
+    "path": "public/audio/en-us/full-site/verbs/ride-rides.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.ride.riding": {
+    "text": "riding",
+    "path": "public/audio/en-us/full-site/verbs/ride-riding.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.ride.rode": {
+    "text": "rode",
+    "path": "public/audio/en-us/full-site/verbs/ride-rode.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.ride.ridden": {
+    "text": "ridden",
+    "path": "public/audio/en-us/full-site/verbs/ride-ridden.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.ride.example": {
+    "text": "I've never ridden a horse.",
+    "path": "public/audio/en-us/full-site/verbs/ride-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.drive.drive": {
+    "text": "drive",
+    "path": "public/audio/en-us/full-site/verbs/drive-drive.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.drive.drives": {
+    "text": "drives",
+    "path": "public/audio/en-us/full-site/verbs/drive-drives.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.drive.driving": {
+    "text": "driving",
+    "path": "public/audio/en-us/full-site/verbs/drive-driving.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.drive.drove": {
+    "text": "drove",
+    "path": "public/audio/en-us/full-site/verbs/drive-drove.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.drive.driven": {
+    "text": "driven",
+    "path": "public/audio/en-us/full-site/verbs/drive-driven.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.drive.example": {
+    "text": "He drove to work yesterday.",
+    "path": "public/audio/en-us/full-site/verbs/drive-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.meet.meet": {
+    "text": "meet",
+    "path": "public/audio/en-us/full-site/verbs/meet-meet.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.meet.meets": {
+    "text": "meets",
+    "path": "public/audio/en-us/full-site/verbs/meet-meets.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.meet.meeting": {
+    "text": "meeting",
+    "path": "public/audio/en-us/full-site/verbs/meet-meeting.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.meet.met": {
+    "text": "met",
+    "path": "public/audio/en-us/full-site/verbs/meet-met.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "verb.meet.example": {
+    "text": "I've met many local people.",
+    "path": "public/audio/en-us/full-site/verbs/meet-example.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.A2.1": {
+    "text": "My name is Alex.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.A2.2": {
+    "text": "I am learning English.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.A2.3": {
+    "text": "I want to improve my speaking.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.A2.4": {
+    "text": "I want to communicate better.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.A2.5": {
+    "text": "I am interested in practical English.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1.1": {
+    "text": "My name is Alex and I am learning practical English.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1.2": {
+    "text": "I want to communicate better in daily life.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1.3": {
+    "text": "At the moment, I am improving my speaking and listening.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1.4": {
+    "text": "I am also interested in work and volunteer situations.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1.5": {
+    "text": "For me, confidence is very important.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1Plus.1": {
+    "text": "My name is Alex, and I am focusing on practical English.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1Plus.2": {
+    "text": "Although I can understand some grammar, speaking naturally is still challenging.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1Plus.3": {
+    "text": "I want to build confidence through daily conversations, volunteer tasks and work situations.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.intro.B1Plus.4": {
+    "text": "For me, English is not just a subject; it is a tool for real communication.",
+    "path": "public/audio/en-us/full-site/scenarios/intro-b1plus-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.A2.1": {
+    "text": "I study English every day.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.A2.2": {
+    "text": "Grammar is sometimes difficult.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.A2.3": {
+    "text": "Speaking is more difficult for me.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.A2.4": {
+    "text": "I want to practise real English.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.A2.5": {
+    "text": "I hope I can move up to B1.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.B1.1": {
+    "text": "I am trying to move from A2+ to B1.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.B1.2": {
+    "text": "My biggest problem is not vocabulary, but using the correct sentence structure when I speak.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.B1.3": {
+    "text": "I understand better when I compare English with Chinese thinking.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.B1.4": {
+    "text": "I want to practise speaking more often because I need real communication.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.B1Plus.1": {
+    "text": "My English learning goal is to become more confident in real-life communication.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.B1Plus.2": {
+    "text": "I can understand many ideas in Chinese, but I often hesitate when I need to choose the right English structure.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.english-learning.B1Plus.3": {
+    "text": "That is why I focus on English switches, such as past tense, present perfect and verb-ing patterns.",
+    "path": "public/audio/en-us/full-site/scenarios/english-learning-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.A2.1": {
+    "text": "I volunteer at a local shop.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.A2.2": {
+    "text": "I help customers.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.A2.3": {
+    "text": "People sometimes speak fast.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.A2.4": {
+    "text": "It is difficult for me.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.A2.5": {
+    "text": "But it is good for my English.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1.1": {
+    "text": "I do volunteer work at a local shop.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1.2": {
+    "text": "I usually help customers and listen to real conversations.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1.3": {
+    "text": "At first, it was difficult because people spoke very fast.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1.4": {
+    "text": "But I think it is useful because I can practise real English.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1.5": {
+    "text": "For me, volunteering is tiring but rewarding.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1Plus.1": {
+    "text": "Volunteer work is useful for real-life English practice.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1Plus.2": {
+    "text": "I sometimes help customers and listen to natural conversations.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1Plus.3": {
+    "text": "Although it can be tiring, I find it rewarding because it gives me a chance to practise communication.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.volunteer.B1Plus.4": {
+    "text": "Compared with classroom English, real-life English is faster and less predictable.",
+    "path": "public/audio/en-us/full-site/scenarios/volunteer-b1plus-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.A2.1": {
+    "text": "On Saturday, I studied English.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.A2.2": {
+    "text": "I called a friend.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.A2.3": {
+    "text": "On Sunday, I rested at home.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.A2.4": {
+    "text": "I cooked lunch.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.A2.5": {
+    "text": "It was a simple weekend.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.B1.1": {
+    "text": "Last weekend, I studied English and reviewed some grammar.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.B1.2": {
+    "text": "I also called a friend because I wanted to practise speaking.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.B1.3": {
+    "text": "On Sunday, I stayed at home and cooked a simple lunch.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.B1.4": {
+    "text": "It was not exciting, but it was useful and relaxing.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.B1Plus.1": {
+    "text": "My weekend was quiet but productive.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.B1Plus.2": {
+    "text": "I spent some time reviewing English patterns, especially past tense and present perfect.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.weekend.B1Plus.3": {
+    "text": "Although I did not go out much, I felt satisfied because I made progress and had enough time to rest.",
+    "path": "public/audio/en-us/full-site/scenarios/weekend-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.A2.1": {
+    "text": "My perfect lunchbox has protein, vegetables and fruit.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.A2.2": {
+    "text": "For protein, I want eggs or chicken.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.A2.3": {
+    "text": "I also want some vegetables.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.A2.4": {
+    "text": "I don't want too much bread.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.A2.5": {
+    "text": "It should be simple and healthy.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.B1.1": {
+    "text": "My perfect lunchbox has protein, vegetables, fruit and some carbohydrates.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.B1.2": {
+    "text": "Protein is important because it gives me energy and helps me stay full.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.B1.3": {
+    "text": "I don't want too many carbohydrates because I feel sleepy in class.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.B1.4": {
+    "text": "For me, a good lunchbox should be simple, nutritious and not expensive.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.B1Plus.1": {
+    "text": "For me, the perfect lunchbox should be balanced, practical and affordable.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.B1Plus.2": {
+    "text": "It should include enough protein, such as eggs, chicken or tuna, because protein helps me stay full.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.lunchbox.B1Plus.3": {
+    "text": "I would avoid too many carbohydrates because they can make me feel sleepy in the afternoon.",
+    "path": "public/audio/en-us/full-site/scenarios/lunchbox-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.A2.1": {
+    "text": "I found a wallet once.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.A2.2": {
+    "text": "It was on the street.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.A2.3": {
+    "text": "I felt worried.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.A2.4": {
+    "text": "I gave it to the police.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.A2.5": {
+    "text": "I think honesty is important.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.B1.1": {
+    "text": "One time, I found a wallet on the street.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.B1.2": {
+    "text": "At first, I did not know what to do.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.B1.3": {
+    "text": "Then I gave it to the police because I wanted the owner to get it back.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.B1.4": {
+    "text": "I think it was the right thing to do.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.B1Plus.1": {
+    "text": "I once found a wallet on the street, and it made me think about honesty and responsibility.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.B1Plus.2": {
+    "text": "Although it would have been easy to ignore it, I decided to take it to the police.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.found-object.B1Plus.3": {
+    "text": "For me, small decisions like this show a person's character.",
+    "path": "public/audio/en-us/full-site/scenarios/found-object-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.A2.1": {
+    "text": "Hello, I am calling about the part-time job.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.A2.2": {
+    "text": "I am available on weekends.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.A2.3": {
+    "text": "I am reliable.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.A2.4": {
+    "text": "I am willing to learn.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.A2.5": {
+    "text": "Can I have an interview?",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.B1.1": {
+    "text": "Hello, I am calling about the part-time job you advertised.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.B1.2": {
+    "text": "I am available on Friday afternoon, Saturday and Sunday.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.B1.3": {
+    "text": "I have some volunteer experience and I am willing to learn new tasks.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.B1.4": {
+    "text": "Could I please arrange an interview?",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.B1Plus.1": {
+    "text": "Hello, I am calling to ask about the part-time position you advertised.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.B1Plus.2": {
+    "text": "I am available on weekends and Friday afternoons, and I have volunteer experience where I worked with customers.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.phone-job.B1Plus.3": {
+    "text": "I believe I am reliable, punctual and willing to learn, so I would really appreciate the chance to attend an interview.",
+    "path": "public/audio/en-us/full-site/scenarios/phone-job-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.A2.1": {
+    "text": "Hello, I have a booking tonight.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.A2.2": {
+    "text": "I need to cancel it.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.A2.3": {
+    "text": "I am sorry.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.A2.4": {
+    "text": "The booking is under my name.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.A2.5": {
+    "text": "Thank you for your help.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.B1.1": {
+    "text": "Hello, I am calling to cancel my booking for tonight.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.B1.2": {
+    "text": "The booking is under my name.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.B1.3": {
+    "text": "I am sorry for the inconvenience.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.B1.4": {
+    "text": "I hope I can book another time later.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.B1Plus.1": {
+    "text": "Hello, I am calling because I need to cancel my booking for tonight.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.B1Plus.2": {
+    "text": "The reservation is under the name Awei.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.B1Plus.3": {
+    "text": "I am sorry for the short notice and any inconvenience this may cause.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.cancel-booking.B1Plus.4": {
+    "text": "I would be happy to book again another time.",
+    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1plus-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.A2.1": {
+    "text": "Hello, I want to make an appointment.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.A2.2": {
+    "text": "I am available tomorrow morning.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.A2.3": {
+    "text": "I have a health problem.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.A2.4": {
+    "text": "Can I see the doctor?",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.A2.5": {
+    "text": "Thank you.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.B1.1": {
+    "text": "Hello, I would like to make an appointment with the doctor.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.B1.2": {
+    "text": "I am available tomorrow morning or Friday afternoon.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.B1.3": {
+    "text": "I have had this problem for a few days.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.B1.4": {
+    "text": "Could you please tell me what times are available?",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-b1-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.B1Plus.1": {
+    "text": "Hello, I would like to make an appointment with a doctor because I have had this problem for several days.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.B1Plus.2": {
+    "text": "I am available tomorrow morning or Friday afternoon.",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.doctor.B1Plus.3": {
+    "text": "Could you please let me know the earliest suitable appointment?",
+    "path": "public/audio/en-us/full-site/scenarios/doctor-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.A2.1": {
+    "text": "I think speaking is important.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-a2-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.A2.2": {
+    "text": "For me, grammar is difficult.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-a2-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.A2.3": {
+    "text": "I need more practice.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-a2-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.A2.4": {
+    "text": "Real English is fast.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-a2-4.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.A2.5": {
+    "text": "But I can improve.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-a2-5.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.B1.1": {
+    "text": "I think speaking is more important than writing for me right now.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-b1-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.B1.2": {
+    "text": "Grammar is useful, but real communication is my main goal.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-b1-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.B1.3": {
+    "text": "Although real English is fast, I can improve if I practise every day.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-b1-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.B1Plus.1": {
+    "text": "For me, English is not just a school subject; it is a tool for real communication.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-b1plus-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.B1Plus.2": {
+    "text": "Although grammar can be difficult, I understand it better when I connect it with Chinese thinking.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-b1plus-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "scenario.opinion.B1Plus.3": {
+    "text": "That is why I want to practise sentence patterns in real situations.",
+    "path": "public/audio/en-us/full-site/scenarios/opinion-b1plus-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.1": {
+    "text": "work",
+    "path": "public/audio/en-us/full-site/pronunciation/1-1-work.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.2": {
+    "text": "live",
+    "path": "public/audio/en-us/full-site/pronunciation/1-2-live.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.3": {
+    "text": "bed",
+    "path": "public/audio/en-us/full-site/pronunciation/1-3-bed.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.4": {
+    "text": "ship",
+    "path": "public/audio/en-us/full-site/pronunciation/1-4-ship.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.5": {
+    "text": "full",
+    "path": "public/audio/en-us/full-site/pronunciation/1-5-full.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.6": {
+    "text": "cheap",
+    "path": "public/audio/en-us/full-site/pronunciation/1-6-cheap.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.7": {
+    "text": "taste",
+    "path": "public/audio/en-us/full-site/pronunciation/1-7-taste.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.8": {
+    "text": "light",
+    "path": "public/audio/en-us/full-site/pronunciation/1-8-light.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.1.9": {
+    "text": "place",
+    "path": "public/audio/en-us/full-site/pronunciation/1-9-place.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.2.1": {
+    "text": "works",
+    "path": "public/audio/en-us/full-site/pronunciation/2-1-works.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.2.2": {
+    "text": "needs",
+    "path": "public/audio/en-us/full-site/pronunciation/2-2-needs.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.2.3": {
+    "text": "helps",
+    "path": "public/audio/en-us/full-site/pronunciation/2-3-helps.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.2.4": {
+    "text": "studies",
+    "path": "public/audio/en-us/full-site/pronunciation/2-4-studies.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.3.1": {
+    "text": "worked",
+    "path": "public/audio/en-us/full-site/pronunciation/3-1-worked.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.3.2": {
+    "text": "called",
+    "path": "public/audio/en-us/full-site/pronunciation/3-2-called.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.3.3": {
+    "text": "wanted",
+    "path": "public/audio/en-us/full-site/pronunciation/3-3-wanted.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.3.4": {
+    "text": "studied",
+    "path": "public/audio/en-us/full-site/pronunciation/3-4-studied.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.4.1": {
+    "text": "I want to improve my speaking.",
+    "path": "public/audio/en-us/full-site/pronunciation/4-1-i-want-to-improve-my-speaking.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.4.2": {
+    "text": "I've done volunteer work before.",
+    "path": "public/audio/en-us/full-site/pronunciation/4-2-i-ve-done-volunteer-work-before.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.4.3": {
+    "text": "I was volunteering when he called me.",
+    "path": "public/audio/en-us/full-site/pronunciation/4-3-i-was-volunteering-when-he-called-me.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.4.4": {
+    "text": "I'm interested in learning practical English.",
+    "path": "public/audio/en-us/full-site/pronunciation/4-4-i-m-interested-in-learning-practical-english.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.4.5": {
+    "text": "I'm available on Friday afternoon, Saturday and Sunday.",
+    "path": "public/audio/en-us/full-site/pronunciation/4-5-i-m-available-on-friday-afternoon-saturday-and-sunday.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "pronunciation.4.6": {
+    "text": "For me, English is not just a subject.",
+    "path": "public/audio/en-us/full-site/pronunciation/4-6-for-me-english-is-not-just-a-subject.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.1.option.1": {
+    "text": "call",
+    "path": "public/audio/en-us/full-site/tests/test-1-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.1.option.2": {
+    "text": "called",
+    "path": "public/audio/en-us/full-site/tests/test-1-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.1.option.3": {
+    "text": "have called",
+    "path": "public/audio/en-us/full-site/tests/test-1-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.1.answer": {
+    "text": "called",
+    "path": "public/audio/en-us/full-site/tests/test-1-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.2.option.1": {
+    "text": "like",
+    "path": "public/audio/en-us/full-site/tests/test-2-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.2.option.2": {
+    "text": "likes",
+    "path": "public/audio/en-us/full-site/tests/test-2-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.2.option.3": {
+    "text": "liked",
+    "path": "public/audio/en-us/full-site/tests/test-2-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.2.answer": {
+    "text": "like",
+    "path": "public/audio/en-us/full-site/tests/test-2-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.3.option.1": {
+    "text": "do",
+    "path": "public/audio/en-us/full-site/tests/test-3-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.3.option.2": {
+    "text": "did",
+    "path": "public/audio/en-us/full-site/tests/test-3-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.3.option.3": {
+    "text": "done",
+    "path": "public/audio/en-us/full-site/tests/test-3-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.3.answer": {
+    "text": "done",
+    "path": "public/audio/en-us/full-site/tests/test-3-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.4.option.1": {
+    "text": "borrowed",
+    "path": "public/audio/en-us/full-site/tests/test-4-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.4.option.2": {
+    "text": "lent",
+    "path": "public/audio/en-us/full-site/tests/test-4-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.4.option.3": {
+    "text": "cost",
+    "path": "public/audio/en-us/full-site/tests/test-4-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.4.answer": {
+    "text": "borrowed",
+    "path": "public/audio/en-us/full-site/tests/test-4-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.5.option.1": {
+    "text": "spent",
+    "path": "public/audio/en-us/full-site/tests/test-5-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.5.option.2": {
+    "text": "cost",
+    "path": "public/audio/en-us/full-site/tests/test-5-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.5.option.3": {
+    "text": "borrowed",
+    "path": "public/audio/en-us/full-site/tests/test-5-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.5.answer": {
+    "text": "cost",
+    "path": "public/audio/en-us/full-site/tests/test-5-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.6.option.1": {
+    "text": "What did you eat yesterday?",
+    "path": "public/audio/en-us/full-site/tests/test-6-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.6.option.2": {
+    "text": "What you did eat yesterday?",
+    "path": "public/audio/en-us/full-site/tests/test-6-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.6.option.3": {
+    "text": "What did you ate yesterday?",
+    "path": "public/audio/en-us/full-site/tests/test-6-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.6.answer": {
+    "text": "What did you eat yesterday?",
+    "path": "public/audio/en-us/full-site/tests/test-6-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.7.question": {
+    "text": "Awei volunteers on Fridays. True or False?",
+    "path": "public/audio/en-us/full-site/tests/test-7-question.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.7.option.1": {
+    "text": "True",
+    "path": "public/audio/en-us/full-site/tests/test-7-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.7.option.2": {
+    "text": "False",
+    "path": "public/audio/en-us/full-site/tests/test-7-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.7.answer": {
+    "text": "True",
+    "path": "public/audio/en-us/full-site/tests/test-7-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.8.question": {
+    "text": "Why do you want to improve your speaking?",
+    "path": "public/audio/en-us/full-site/tests/test-8-question.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.8.option.1": {
+    "text": "Because I need real communication.",
+    "path": "public/audio/en-us/full-site/tests/test-8-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.8.option.2": {
+    "text": "Because I need real communicate.",
+    "path": "public/audio/en-us/full-site/tests/test-8-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.8.option.3": {
+    "text": "Because I needing speak.",
+    "path": "public/audio/en-us/full-site/tests/test-8-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.8.answer": {
+    "text": "Because I need real communication.",
+    "path": "public/audio/en-us/full-site/tests/test-8-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.9.option.1": {
+    "text": "In the picture, I can see...",
+    "path": "public/audio/en-us/full-site/tests/test-9-option-1.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.9.option.2": {
+    "text": "On the picture, I look...",
+    "path": "public/audio/en-us/full-site/tests/test-9-option-2.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.9.option.3": {
+    "text": "At picture has...",
+    "path": "public/audio/en-us/full-site/tests/test-9-option-3.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  },
+  "test.9.answer": {
+    "text": "In the picture, I can see...",
+    "path": "public/audio/en-us/full-site/tests/test-9-answer.mp3",
+    "voice": "marin",
+    "model": "gpt-4o-mini-tts",
+    "generatedAt": "2026-06-29"
+  }
+}

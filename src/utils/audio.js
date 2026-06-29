@@ -42,6 +42,8 @@
 
   let currentAudio = null;
   let voices = [];
+  let manifestPromise = null;
+  let manifestByText = null;
 
   function readJSON(key, fallback) {
     try {
@@ -113,17 +115,39 @@
     speechSynthesis.speak(utterance);
   }
 
-  function playAudioOrTTS({ audioPath, text, slow = false } = {}) {
+  async function findAudioPathByText(text) {
+    if (!text) return "";
+    try {
+      if (!manifestPromise) {
+        manifestPromise = fetch("public/audio/audio-manifest.json")
+          .then(response => response.ok ? response.json() : {})
+          .catch(() => ({}));
+      }
+      const manifest = await manifestPromise;
+      if (!manifestByText) {
+        manifestByText = new Map();
+        Object.values(manifest || {}).forEach(item => {
+          if (item?.text && item?.path) manifestByText.set(item.text.trim().toLowerCase(), item.path);
+        });
+      }
+      return manifestByText.get(String(text).trim().toLowerCase()) || "";
+    } catch {
+      return "";
+    }
+  }
+
+  async function playAudioOrTTS({ audioPath, text, slow = false } = {}) {
     if (!isVoiceEnabled()) return Promise.resolve(false);
     stopAudio();
+    const resolvedAudioPath = audioPath || await findAudioPathByText(text);
     return new Promise(resolve => {
-      if (!audioPath) {
+      if (!resolvedAudioPath) {
         speakText(text, slow);
         resolve(false);
         return;
       }
       try {
-        const audio = new Audio(audioPath);
+        const audio = new Audio(resolvedAudioPath);
         currentAudio = audio;
         audio.playbackRate = slow ? 0.75 : 1;
         audio.onended = () => resolve(true);
