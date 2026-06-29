@@ -119,9 +119,7 @@
     if (!text) return "";
     try {
       if (!manifestPromise) {
-        manifestPromise = fetch("public/audio/audio-manifest.json")
-          .then(response => response.ok ? response.json() : {})
-          .catch(() => ({}));
+        manifestPromise = fetchFirstJSON(["audio/audio-manifest.json", "public/audio/audio-manifest.json"]);
       }
       const manifest = await manifestPromise;
       if (!manifestByText) {
@@ -134,6 +132,16 @@
     } catch {
       return "";
     }
+  }
+
+  async function fetchFirstJSON(urls) {
+    for (const url of urls) {
+      try {
+        const response = await fetch(url);
+        if (response.ok) return response.json();
+      } catch {}
+    }
+    return {};
   }
 
   async function playAudioOrTTS({ audioPath, text, slow = false } = {}) {
