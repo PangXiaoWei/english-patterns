@@ -44,6 +44,7 @@
   let voices = [];
   let manifestPromise = null;
   let manifestByText = null;
+  let playbackToken = 0;
 
   function readJSON(key, fallback) {
     try {
@@ -67,6 +68,7 @@
   }
 
   function stopAudio() {
+    playbackToken += 1;
     try {
       if (currentAudio) {
         currentAudio.pause();
@@ -104,7 +106,7 @@
   }
 
   function speakText(text, slow = false) {
-    if (!("speechSynthesis" in window)) return;
+    if (!("speechSynthesis" in window)) return Promise.resolve(false);
     const utterance = new SpeechSynthesisUtterance(normalizeSpeechText(text));
     const voice = pickVoice();
     if (voice) utterance.voice = voice;
@@ -112,7 +114,11 @@
     utterance.rate = slow ? 0.7 : 1.0;
     utterance.pitch = 1;
     utterance.volume = 1;
-    speechSynthesis.speak(utterance);
+    return new Promise(resolve => {
+      utterance.onend = () => resolve(false);
+      utterance.onerror = () => resolve(false);
+      speechSynthesis.speak(utterance);
+    });
   }
 
   async function findAudioPathByText(text) {
@@ -128,10 +134,27 @@
           if (item?.text && item?.path) manifestByText.set(item.text.trim().toLowerCase(), item.path);
         });
       }
-      return manifestByText.get(String(text).trim().toLowerCase()) || "";
+      const normalized = normalizeLookupText(text);
+      return manifestByText.get(normalized) || manifestByText.get(stripEndingPunctuation(normalized)) || "";
     } catch {
       return "";
     }
+  }
+
+  function normalizeLookupText(text) {
+    return String(text || "").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  function stripEndingPunctuation(text) {
+    return String(text || "").replace(/[.!?。！？]+$/g, "").trim();
+  }
+
+  function splitSpeechSegments(text) {
+    return String(text || "")
+      .replace(/\s+/g, " ")
+      .match(/[^.!?]+[.!?]+|[^.!?]+$/g)
+      ?.map(segment => segment.trim())
+      .filter(Boolean) || [];
   }
 
   async function fetchFirstJSON(urls) {
@@ -147,30 +170,52 @@
   async function playAudioOrTTS({ audioPath, text, slow = false } = {}) {
     if (!isVoiceEnabled()) return Promise.resolve(false);
     stopAudio();
+    const token = playbackToken;
     const resolvedAudioPath = audioPath || await findAudioPathByText(text);
+    if (resolvedAudioPath) {
+      const played = await playAudioFile(resolvedAudioPath, slow, token);
+      if (!played && token === playbackToken) await speakText(text, slow);
+      return played;
+    }
+
+    const segments = splitSpeechSegments(text);
+    if (segments.length > 1) {
+      let usedLocalAudio = false;
+      for (const segment of segments) {
+        if (token !== playbackToken) return usedLocalAudio;
+        const path = await findAudioPathByText(segment);
+        if (path) {
+          usedLocalAudio = true;
+          const played = await playAudioFile(path, slow, token);
+          if (!played && token === playbackToken) await speakText(segment, slow);
+        } else {
+          await speakText(segment, slow);
+        }
+      }
+      return usedLocalAudio;
+    }
+
+    await speakText(text, slow);
+    return false;
+  }
+
+  function playAudioFile(audioPath, slow, token) {
     return new Promise(resolve => {
-      if (!resolvedAudioPath) {
-        speakText(text, slow);
+      if (token !== playbackToken) {
         resolve(false);
         return;
       }
       try {
-        const audio = new Audio(resolvedAudioPath);
+        const audio = new Audio(audioPath);
         currentAudio = audio;
-        audio.playbackRate = slow ? 0.75 : 1;
+        audio.playbackRate = slow ? 0.82 : 1;
         audio.onended = () => resolve(true);
         audio.onerror = () => {
-          stopAudio();
-          speakText(text, slow);
+          if (token === playbackToken) currentAudio = null;
           resolve(false);
         };
-        audio.play().then(() => resolve(true)).catch(() => {
-          stopAudio();
-          speakText(text, slow);
-          resolve(false);
-        });
+        audio.play().catch(() => resolve(false));
       } catch {
-        speakText(text, slow);
         resolve(false);
       }
     });
