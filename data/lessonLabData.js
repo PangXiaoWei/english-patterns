@@ -1,4 +1,4 @@
-window.englishFile9bComputerLessonData = {
+﻿window.englishFile9bComputerLessonData = {
   "id": "english-file-9b-computer-devices",
   "title": "English File 9B - Computer & Electronic Devices",
   "level": "A2+/B1",
@@ -16,8 +16,8 @@ window.englishFile9bComputerLessonData = {
       "word": "an adaptor",
       "ipa": "/ən əˈdæptə/",
       "chinese": "转换插头；旅行转接头",
-      "noteZh": "NZ/UK 常见拼写 adaptor，也可写 adapter。重点是 dap /dæp/，最后 /tə/ 很轻。",
-      "example": "I need a travel adaptor for New Zealand.",
+      "noteZh": "adaptor 和 adapter 都常见。重点是 dap /dæp/，最后 /tə/ 很轻。",
+      "example": "I need a travel adaptor when I travel.",
       "exampleZh": "我需要一个新西兰旅行转换插头。",
       "audioText": "an adaptor",
       "tags": [
@@ -32,7 +32,7 @@ window.englishFile9bComputerLessonData = {
       "word": "a charger",
       "ipa": "/ə ˈtʃɑːdʒə/",
       "chinese": "充电器",
-      "noteZh": "ch 是 /tʃ/，不是 /k/。NZ/UK 里 r 通常不明显。",
+      "noteZh": "ch 是 /tʃ/，不是 /k/。最后的 r 音很轻。",
       "example": "I forgot my phone charger.",
       "exampleZh": "我忘带手机充电器了。",
       "audioText": "a charger",
@@ -137,7 +137,7 @@ window.englishFile9bComputerLessonData = {
       "word": "a router",
       "ipa": "/ə ˈruːtə/",
       "chinese": "路由器",
-      "noteZh": "NZ/UK 常读 /ˈruːtə/；美式有时读 /ˈraʊtər/。",
+      "noteZh": "ch 是 /tʃ/，不是 /k/。最后的 r 音很轻。",
       "example": "I restarted the router.",
       "exampleZh": "我重启了路由器。",
       "audioText": "a router",
@@ -568,12 +568,12 @@ window.englishFile9bComputerLessonData = {
     },
     {
       "id": "sp04",
-      "question": "How many pins do plugs have in your country? Do you need a travel adaptor abroad?",
+      "question": "How many pins do plugs usually have? Do you need a travel adaptor abroad?",
       "questionZh": "你国家的插头有几个插脚？出国需要转换插头吗？",
-      "a2Answer": "In China, many plugs have two or three pins. In New Zealand, I need a travel adaptor.",
-      "b1Answer": "In China, plugs usually have two or three pins, but the shape is different from New Zealand, so I need a travel adaptor here.",
+      "a2Answer": "Many plugs have two or three pins. When I travel, I may need a travel adaptor.",
+      "b1Answer": "Plugs can be different in other countries, so I usually check before I travel and bring a travel adaptor.",
       "usefulChunks": [
-        "In China...",
+        "When I travel...",
         "the shape is different",
         "I need a travel adaptor"
       ]
@@ -626,3 +626,4 @@ window.englishFile9bComputerLessonData = {
   }
 };
 window.EXAMPLE_LESSON_DATA = window.englishFile9bComputerLessonData;
+

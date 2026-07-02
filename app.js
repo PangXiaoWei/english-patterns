@@ -1,4 +1,4 @@
-const $ = id => document.getElementById(id);
+﻿const $ = id => document.getElementById(id);
 const data = {
   lessons: window.LESSONS || [],
   verbs: window.VERBS || [],
@@ -50,9 +50,14 @@ const state = {
   lessonLab: readJSON(store.lessonLabData, data.lessonLabExample),
   lessonLabTab: "vocabulary",
   lessonLabSwitchIndex: 0,
+  lessonLabPackSearch: "",
+  lessonLabHideZh: false,
   lessonLabProgress: readJSON(store.lessonLabProgress, { mastered: [], tasks: [] }),
   lessonLabMistakes: readJSON(store.lessonLabMistakes, [])
 };
+
+let currentLabAudio = null;
+let currentLabAudioButton = null;
 
 function readJSON(key, fallback) {
   try {
@@ -343,13 +348,18 @@ function renderProgress() {
 
 function lessonLabItems() {
   const lesson = state.lessonLab || {};
+  const pack = lesson.computerPhoneSurvivalPack || window.COMPUTER_PHONE_SURVIVAL_PACK || {};
   return [
     ...(lesson.vocabulary || []).map(item => ({ kind: "vocabulary", key: `vocab:${item.id || item.word}`, label: item.word, text: item.audioText || item.example || item.word })),
     ...(lesson.pronunciation || []).flatMap(group => (group.words || []).map(item => ({ kind: "pronunciation", key: `pron:${group.id}:${item.word}`, label: item.word, text: item.word }))),
     ...(lesson.phrasalVerbs || []).map(item => ({ kind: "phrasal", key: `phrase:${item.phrase}`, label: item.phrase, text: item.example || item.phrase })),
     ...(lesson.sentenceSwitches || []).map((item, index) => ({ kind: "sentence", key: `switch:${item.id || index}`, label: item.zh || item.chinese, text: item.answer || item.answers?.[0] || item.zh || item.chinese })),
     ...(lesson.quantifiers || []).map(item => ({ kind: "quantifier", key: `quantifier:${item.id || item.pattern}`, label: item.pattern, text: item.example || item.pattern })),
-    ...(lesson.realLifeTasks || []).map(item => ({ kind: "task", key: `task:${item.id || item.title}`, label: item.title, text: item.sentence || item.title }))
+    ...(lesson.realLifeTasks || []).map(item => ({ kind: "task", key: `task:${item.id || item.title}`, label: item.title, text: item.sentence || item.title })),
+    ...(pack.vocabulary || []).map(item => ({ kind: "pack-vocabulary", key: `pack:vocab:${item.id || item.word}`, label: item.word, text: item.audioText || item.word })),
+    ...(pack.actionPhrases || []).map(item => ({ kind: "pack-action", key: `pack:action:${item.id || item.phrase}`, label: item.phrase, text: item.audioText || item.phrase })),
+    ...(pack.troubleshootingSentences || []).map(item => ({ kind: "pack-troubleshooting", key: `pack:trouble:${item.id || item.answer}`, label: item.zh, text: item.answer })),
+    ...(pack.realLifeDialogues || []).map(item => ({ kind: "pack-dialogue", key: `pack:dialogue:${item.id || item.title}`, label: item.title, text: (item.dialogue || []).map(line => line.text).join(" ") }))
   ];
 }
 
@@ -386,25 +396,30 @@ function renderLessonLab() {
     quantifiers: renderLessonLabQuantifiers,
     speaking: renderLessonLabSpeaking,
     tasks: renderLessonLabTasks,
+    packVocabulary: renderSurvivalPackVocabulary,
+    packActions: renderSurvivalPackActions,
+    packTroubleshooting: renderSurvivalPackTroubleshooting,
+    packDialogues: renderSurvivalPackDialogues,
     mistakes: renderLessonLabMistakes
   };
   $("lessonLabPanel").innerHTML = (renderers[state.lessonLabTab] || renderLessonLabVocabulary)(lesson);
 }
 
 function labActionButtons(text, key, type = "meaning", exampleText = text) {
+  const masteredClass = state.lessonLabProgress.mastered.includes(key) ? "active-action" : "";
+  const mistakeClass = isLessonLabMistake(key) ? "active-action" : "";
   return `
     <div class="speak-actions lab-actions">
-      <button data-lab-speak="${escapeAttr(text)}" data-rate="0.65">慢速播放</button>
-      <button data-lab-speak="${escapeAttr(text)}" data-rate="0.95">正常播放</button>
-      <button data-lab-speak="${escapeAttr(exampleText || text)}" data-rate="0.88">例句播放</button>
-      <button data-lab-tts="${escapeAttr(text)}" data-speed="0.8">高质量播放</button>
-      <button data-lab-master="${escapeAttr(key)}">我会了</button>
-      <button data-lab-mistake="${escapeAttr(key)}" data-mistake-type="${escapeAttr(type)}" data-mistake-content="${escapeAttr(text)}">加入错题本</button>
+      <button class="lab-play-button" data-lab-play="${escapeAttr(text)}" data-speed="0.75" data-voice="marin" data-accent="neutral">慢速播放</button>
+      <button class="lab-play-button" data-lab-play="${escapeAttr(text)}" data-speed="1" data-voice="marin" data-accent="neutral">正常播放</button>
+      <button class="lab-play-button" data-lab-play="${escapeAttr(exampleText || text)}" data-speed="0.9" data-voice="marin" data-accent="neutral">例句播放</button>
+      <button class="lab-play-button" data-lab-play="${escapeAttr(text)}" data-speed="0.85" data-voice="cedar" data-accent="new-zealand">高质量播放</button>
+      <button data-lab-master="${escapeAttr(key)}" class="${masteredClass}">我会了</button>
+      <button data-lab-mistake="${escapeAttr(key)}" data-mistake-type="${escapeAttr(type)}" data-mistake-content="${escapeAttr(text)}" class="${mistakeClass}">加入错题本</button>
       <button data-lab-task="${escapeAttr(key)}">加入今日任务</button>
     </div>
   `;
 }
-
 function renderLessonLabVocabulary(lesson) {
   return `<section class="lab-card-grid">${(lesson.vocabulary || []).map(item => {
     const key = `vocab:${item.word}`;
@@ -506,6 +521,149 @@ function renderLessonLabTasks(lesson) {
   `).join("")}</section>`;
 }
 
+function lessonLabPack(lesson = state.lessonLab || {}) {
+  return lesson.computerPhoneSurvivalPack || window.COMPUTER_PHONE_SURVIVAL_PACK || {};
+}
+
+function isLessonLabMistake(key) {
+  return state.lessonLabMistakes.some(item => item.key === key || item.content === key);
+}
+
+function labCardStateClass(key) {
+  return `${state.lessonLabProgress.mastered.includes(key) ? "lab-mastered" : ""} ${isLessonLabMistake(key) ? "lab-mistake-card" : ""}`.trim();
+}
+
+function packMatchesSearch(item) {
+  const query = normalize(state.lessonLabPackSearch || "");
+  if (!query) return true;
+  return normalize(JSON.stringify(item)).includes(query);
+}
+
+function renderSurvivalPackHeader(pack, visibleCount, totalCount) {
+  const dailyDone = state.lessonLabProgress.tasks.filter(key => key.startsWith("pack:")).length;
+  const total = Math.max(1, totalCount || lessonLabItems().filter(item => item.key.startsWith("pack:")).length);
+  const percent = Math.min(100, Math.round((dailyDone / total) * 100));
+  return `
+    <article class="lab-card survival-pack-head">
+      <div>
+        <p class="eyebrow">COMPUTER & PHONE SURVIVAL PACK</p>
+        <h2>${pack.title || "Computer & Phone Survival Pack"} / ${pack.titleZh || "电脑和手机高频生存词包"}</h2>
+        <p>${pack.learningGoalZh || pack.sourceNote || ""}</p>
+        <small>AI voice generated for pronunciation practice.</small>
+      </div>
+      <div class="pack-tools">
+        <input id="survivalPackSearch" value="${escapeAttr(state.lessonLabPackSearch)}" placeholder="搜索英文 / 中文 / IPA / example / scenario">
+        <button class="small-button" data-lab-stop>停止朗读</button>
+        <button class="small-button" data-toggle-zh>${state.lessonLabHideZh ? "显示中文" : "隐藏中文"}</button>
+        <span>${visibleCount} / ${totalCount}</span>
+        <div class="progress-track"><span style="width:${percent}%"></span></div>
+      </div>
+    </article>
+  `;
+}
+
+function renderSurvivalPackVocabulary(lesson) {
+  const pack = lessonLabPack(lesson);
+  const items = (pack.vocabulary || []).filter(packMatchesSearch);
+  return `${renderSurvivalPackHeader(pack, items.length, (pack.vocabulary || []).length)}
+    <section class="lab-card-grid">${items.map(item => {
+      const key = `pack:vocab:${item.id || item.word}`;
+      return `
+        <article class="lab-flip-card ${labCardStateClass(key)}">
+          <div class="card-head"><span class="tag">Vocabulary</span><span>${item.id || ""}</span></div>
+          <h3>${item.word}</h3>
+          <p class="ipa">${item.ipa || ""}</p>
+          <p class="meaning">${item.chinese || ""}</p>
+          <div class="trap-box"><b>发音提醒</b><span>${item.noteZh || ""}</span></div>
+          <div class="example-line"><b>${item.example || ""}</b><span>${state.lessonLabHideZh ? "" : item.exampleZh || ""}</span></div>
+          ${labActionButtons(item.audioText || item.word, key, "意思", item.example || item.word)}
+        </article>
+      `;
+    }).join("")}</section>`;
+}
+
+function renderSurvivalPackActions(lesson) {
+  const pack = lessonLabPack(lesson);
+  const items = (pack.actionPhrases || []).filter(packMatchesSearch);
+  return `${renderSurvivalPackHeader(pack, items.length, (pack.actionPhrases || []).length)}
+    <section class="phrasal-lab">${items.map(item => {
+      const key = `pack:action:${item.id || item.phrase}`;
+      return `
+        <article class="lab-card phrasal-card ${labCardStateClass(key)}">
+          <div class="phrasal-icon">⚡</div>
+          <div>
+            <div class="card-head"><span class="tag">Action Phrase</span><span>${item.id || ""}</span></div>
+            <h3>${item.phrase}</h3>
+            <p class="ipa">${item.ipa || ""}</p>
+            <p class="meaning">${item.chinese || ""}</p>
+            <div class="example-line"><b>${item.example || ""}</b><span>${state.lessonLabHideZh ? "" : item.exampleZh || ""}</span></div>
+            ${labActionButtons(item.audioText || item.phrase, key, "动作短语", item.example || item.phrase)}
+          </div>
+        </article>
+      `;
+    }).join("")}</section>`;
+}
+
+function renderSurvivalPackTroubleshooting(lesson) {
+  const pack = lessonLabPack(lesson);
+  const items = (pack.troubleshootingSentences || []).filter(packMatchesSearch);
+  return `${renderSurvivalPackHeader(pack, items.length, (pack.troubleshootingSentences || []).length)}
+    <section class="lab-card-grid">${items.map(item => {
+      const key = `pack:trouble:${item.id || item.answer}`;
+      return `
+        <article class="lab-card switch-lab-card ${labCardStateClass(key)}">
+          <div class="card-head"><span class="tag">中文 → 英文</span><span>${item.focus || ""}</span></div>
+          <h2>${item.zh}</h2>
+          <div id="packAnswer-${escapeAttr(item.id)}" class="switch-answer hidden">
+            <strong>${item.answer}</strong>
+            ${item.alternative ? `<strong>${item.alternative}</strong>` : ""}
+            <div class="speak-actions">
+              <button class="lab-play-button" data-lab-play="${escapeAttr(item.answer)}" data-speed="0.75" data-voice="marin" data-accent="neutral">慢速播放答案</button>
+              ${item.alternative ? `<button class="lab-play-button" data-lab-play="${escapeAttr(item.alternative)}" data-speed="1" data-voice="marin" data-accent="neutral">播放替代表达</button>` : ""}
+            </div>
+          </div>
+          <div class="lab-hero-actions">
+            <button class="primary-button" data-show-pack-answer="${escapeAttr(item.id)}">显示答案</button>
+            <button class="small-button" data-lab-master="${escapeAttr(key)}">我会了</button>
+            <button class="small-button" data-lab-mistake="${escapeAttr(key)}" data-mistake-type="句型" data-mistake-content="${escapeAttr(item.answer)}">加入错题本</button>
+          </div>
+        </article>
+      `;
+    }).join("")}</section>`;
+}
+
+function renderSurvivalPackDialogues(lesson) {
+  const pack = lessonLabPack(lesson);
+  const items = (pack.realLifeDialogues || []).filter(packMatchesSearch);
+  return `${renderSurvivalPackHeader(pack, items.length, (pack.realLifeDialogues || []).length)}
+    <section class="dialogue-lab">${items.map(item => {
+      const key = `pack:dialogue:${item.id || item.title}`;
+      const fullText = (item.dialogue || []).map(line => `${line.speaker}. ${line.text}`).join(" ");
+      return `
+        <article class="lab-card dialogue-card ${labCardStateClass(key)}">
+          <div class="card-head"><span class="tag">Dialogue</span><span>${item.id || ""}</span></div>
+          <h3>${item.title}</h3>
+          <p class="meaning">${state.lessonLabHideZh ? "" : item.scenarioZh || ""}</p>
+          <div class="speak-actions">
+            <button class="lab-play-button" data-lab-play="${escapeAttr(fullText)}" data-speed="0.9" data-voice="marin" data-accent="neutral">播放整段对话</button>
+            <button data-lab-master="${escapeAttr(key)}">我会了</button>
+            <button data-lab-task="${escapeAttr(key)}">加入今日任务</button>
+          </div>
+          <div class="dialogue-lines">
+            ${(item.dialogue || []).map(line => `
+              <div class="dialogue-line">
+                <b>${line.speaker}</b>
+                <p>${line.text}</p>
+                ${state.lessonLabHideZh ? "" : `<span>${line.zh || ""}</span>`}
+                <button class="lab-play-button" data-lab-play="${escapeAttr(line.text)}" data-speed="0.85" data-voice="marin" data-accent="neutral">播放</button>
+              </div>
+            `).join("")}
+          </div>
+        </article>
+      `;
+    }).join("")}</section>`;
+}
+
 function renderLessonLabMistakes() {
   if (!state.lessonLabMistakes.length) {
     return `<article class="lab-card"><p class="empty-note">还没有截图课程错题。点击词卡、短语或句型上的“加入错题本”后，会出现在这里。</p></article>`;
@@ -522,6 +680,7 @@ function renderLessonLabMistakes() {
 
 function labSpeakText(text, rate = 0.95) {
   if (!("speechSynthesis" in window)) return;
+  stopLessonLabAudio();
   speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   const voices = speechSynthesis.getVoices?.() || [];
@@ -536,25 +695,79 @@ function labSpeakText(text, rate = 0.95) {
   speechSynthesis.speak(utterance);
 }
 
-async function playHighQualityTTS(text, speed = 0.8) {
-  const cache = window.__lessonLabTtsCache || (window.__lessonLabTtsCache = {});
-  const key = `${text}::${speed}`;
+function stopLessonLabAudio() {
+  if (currentLabAudio) {
+    currentLabAudio.pause();
+    currentLabAudio.currentTime = 0;
+    currentLabAudio = null;
+  }
+  if (currentLabAudioButton) {
+    currentLabAudioButton.classList.remove("playing", "loading");
+    currentLabAudioButton = null;
+  }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+}
+
+function blobToDataURL(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+}
+
+function readTtsCache() {
+  return readJSON(store.lessonLabTtsCache, {});
+}
+
+function writeTtsCache(cache) {
   try {
-    if (cache[key]) {
-      new Audio(cache[key]).play();
-      return;
-    }
-    const response = await fetch("/api/tts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text, voice: "default", speed })
-    });
-    if (!response.ok) throw new Error("TTS request failed");
-    const blob = await response.blob();
-    const url = URL.createObjectURL(blob);
-    cache[key] = url;
-    new Audio(url).play();
+    const entries = Object.entries(cache).slice(-50);
+    writeJSON(store.lessonLabTtsCache, Object.fromEntries(entries));
   } catch {
+    // localStorage may be full; playback still works through live audio or speechSynthesis.
+  }
+}
+
+async function playHighQualityTTS(text, options = {}) {
+  const speed = Number(options.speed || 0.85);
+  const voice = options.voice || "marin";
+  const accent = options.accent || "neutral";
+  const button = options.button || null;
+  const key = `tts:${voice}:${speed}:${accent}:${text}`;
+  stopLessonLabAudio();
+  if (!text) return;
+  if (button) {
+    currentLabAudioButton = button;
+    button.classList.add("loading");
+  }
+  try {
+    const cache = readTtsCache();
+    const cached = cache[key];
+    const src = cached || await (async () => {
+      const response = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, voice, speed, accent })
+      });
+      if (!response.ok) throw new Error("TTS request failed");
+      const dataUrl = await blobToDataURL(await response.blob());
+      cache[key] = dataUrl;
+      writeTtsCache(cache);
+      return dataUrl;
+    })();
+    const audio = new Audio(src);
+    currentLabAudio = audio;
+    if (button) {
+      button.classList.remove("loading");
+      button.classList.add("playing");
+    }
+    audio.onended = () => stopLessonLabAudio();
+    audio.onerror = () => labSpeakText(text, speed);
+    await audio.play();
+  } catch {
+    if (button) button.classList.remove("loading", "playing");
     labSpeakText(text, speed);
   }
 }
@@ -754,7 +967,18 @@ document.addEventListener("click", event => {
   if (labSpeak) labSpeakText(labSpeak.dataset.labSpeak, Number(labSpeak.dataset.rate || "0.95"));
 
   const labTts = event.target.closest("[data-lab-tts]");
-  if (labTts) playHighQualityTTS(labTts.dataset.labTts, Number(labTts.dataset.speed || "0.8"));
+  if (labTts) playHighQualityTTS(labTts.dataset.labTts, { speed: Number(labTts.dataset.speed || "0.8"), button: labTts });
+
+  const labPlay = event.target.closest("[data-lab-play]");
+  if (labPlay) playHighQualityTTS(labPlay.dataset.labPlay, {
+    speed: Number(labPlay.dataset.speed || "0.85"),
+    voice: labPlay.dataset.voice || "marin",
+    accent: labPlay.dataset.accent || "neutral",
+    button: labPlay
+  });
+
+  const labStop = event.target.closest("[data-lab-stop]");
+  if (labStop) stopLessonLabAudio();
 
   const labMaster = event.target.closest("[data-lab-master]");
   if (labMaster) {
@@ -777,6 +1001,7 @@ document.addEventListener("click", event => {
   if (labMistake) {
     state.lessonLabMistakes = [{
       id: crypto.randomUUID ? crypto.randomUUID() : `lab-${Date.now()}`,
+      key: labMistake.dataset.labMistake,
       content: labMistake.dataset.mistakeContent,
       type: labMistake.dataset.mistakeType || "意思",
       reviews: 0,
@@ -799,6 +1024,15 @@ document.addEventListener("click", event => {
 
   const showLabAnswer = event.target.closest("[data-show-lab-answer]");
   if (showLabAnswer) $("labSwitchAnswer")?.classList.remove("hidden");
+
+  const showPackAnswer = event.target.closest("[data-show-pack-answer]");
+  if (showPackAnswer) $(`packAnswer-${showPackAnswer.dataset.showPackAnswer}`)?.classList.remove("hidden");
+
+  const toggleZh = event.target.closest("[data-toggle-zh]");
+  if (toggleZh) {
+    state.lessonLabHideZh = !state.lessonLabHideZh;
+    renderLessonLab();
+  }
 
   const nextLabSwitch = event.target.closest("[data-next-lab-switch]");
   if (nextLabSwitch) {
@@ -933,6 +1167,13 @@ document.addEventListener("click", event => {
   }
 });
 
+document.addEventListener("input", event => {
+  if (event.target?.id === "survivalPackSearch") {
+    state.lessonLabPackSearch = event.target.value;
+    renderLessonLab();
+  }
+});
+
 function toggleArray(key, current, id) {
   const next = current.includes(id) ? current.filter(item => item !== id) : [...current, id];
   writeJSON(key, next);
@@ -1012,3 +1253,4 @@ function initialViewFromLocation() {
 window.addEventListener("hashchange", () => switchView(location.hash.replace("#", "") || "home"));
 renderAll();
 switchView(initialViewFromLocation());
+

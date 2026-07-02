@@ -59,13 +59,23 @@ async function handleTTS(req, res) {
     }
     const body = JSON.parse(await readBody(req));
     const text = String(body.text || "").trim();
-    const speed = Math.min(1.2, Math.max(0.6, Number(body.speed || 0.8)));
-    const voice = body.voice && body.voice !== "default" ? body.voice : "marin";
+    const speed = Math.min(1.2, Math.max(0.6, Number(body.speed || 1)));
+    const voice = ["marin", "cedar"].includes(body.voice) ? body.voice : "marin";
+    const accent = ["neutral", "new-zealand", "british", "american"].includes(body.accent) ? body.accent : "neutral";
     if (!text) {
       res.writeHead(400, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ error: "text is required" }));
       return;
     }
+    const baseInstructions = speed < 1
+      ? "Speak clearly and naturally for an English learner. Use careful pronunciation, natural pauses, and a neutral English accent. Do not speak too fast."
+      : "Speak clearly and naturally in everyday English. Use accurate pronunciation and natural intonation.";
+    const accentInstructions = {
+      neutral: "",
+      "new-zealand": " Use a clear New Zealand English accent, suitable for an English learner.",
+      british: " Use a clear British English accent, suitable for an English learner.",
+      american: " Use a clear American English accent, suitable for an English learner."
+    };
     const response = await fetch("https://api.openai.com/v1/audio/speech", {
       method: "POST",
       headers: {
@@ -77,6 +87,7 @@ async function handleTTS(req, res) {
         voice,
         input: text,
         speed,
+        instructions: `${baseInstructions}${accentInstructions[accent]}`,
         response_format: "mp3"
       })
     });
