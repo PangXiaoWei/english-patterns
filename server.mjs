@@ -109,6 +109,12 @@ async function handleTTS(req, res) {
   }
 }
 
+function setCorsHeaders(res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,POST,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+}
+
 function serveStatic(req, res) {
   const url = new URL(req.url, `http://127.0.0.1:${PORT}`);
   const pathname = decodeURIComponent((url.pathname === "/" || url.pathname === "/lesson-lab") ? "/index.html" : url.pathname);
@@ -124,6 +130,12 @@ function serveStatic(req, res) {
 }
 
 createServer((req, res) => {
+  setCorsHeaders(res);
+  if (req.method === "OPTIONS") {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
   if (req.method === "POST" && req.url === "/api/tts") {
     handleTTS(req, res);
     return;
