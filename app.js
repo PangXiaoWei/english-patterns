@@ -344,10 +344,12 @@ function renderProgress() {
 function lessonLabItems() {
   const lesson = state.lessonLab || {};
   return [
-    ...(lesson.vocabulary || []).map(item => ({ kind: "vocabulary", key: `vocab:${item.word}`, label: item.word, text: item.audioText || item.example || item.word })),
-    ...(lesson.pronunciation || []).map(item => ({ kind: "pronunciation", key: `pron:${item.word}`, label: item.word, text: item.audioText || item.example || item.word })),
+    ...(lesson.vocabulary || []).map(item => ({ kind: "vocabulary", key: `vocab:${item.id || item.word}`, label: item.word, text: item.audioText || item.example || item.word })),
+    ...(lesson.pronunciation || []).flatMap(group => (group.words || []).map(item => ({ kind: "pronunciation", key: `pron:${group.id}:${item.word}`, label: item.word, text: item.word }))),
     ...(lesson.phrasalVerbs || []).map(item => ({ kind: "phrasal", key: `phrase:${item.phrase}`, label: item.phrase, text: item.example || item.phrase })),
-    ...(lesson.sentenceSwitches || []).map((item, index) => ({ kind: "sentence", key: `switch:${index}`, label: item.chinese, text: item.answers?.[0] || item.chinese }))
+    ...(lesson.sentenceSwitches || []).map((item, index) => ({ kind: "sentence", key: `switch:${item.id || index}`, label: item.zh || item.chinese, text: item.answer || item.answers?.[0] || item.zh || item.chinese })),
+    ...(lesson.quantifiers || []).map(item => ({ kind: "quantifier", key: `quantifier:${item.id || item.pattern}`, label: item.pattern, text: item.example || item.pattern })),
+    ...(lesson.realLifeTasks || []).map(item => ({ kind: "task", key: `task:${item.id || item.title}`, label: item.title, text: item.sentence || item.title }))
   ];
 }
 
@@ -366,7 +368,7 @@ function renderLessonLab() {
   if (!$("lessonLabPanel")) return;
   const lesson = state.lessonLab || data.lessonLabExample;
   $("lessonLabTitle").textContent = lesson.title || "Untitled Lesson";
-  $("lessonLabSource").textContent = lesson.source || "Imported lesson data";
+  $("lessonLabSource").textContent = lesson.sourceNote || lesson.source || "Imported lesson data";
   $("lessonLabLevel").textContent = lesson.level || "A2+/B1";
   $("lessonLabTopic").textContent = lesson.topic || "daily English";
   $("lessonLabVocabCount").textContent = (lesson.vocabulary || []).length;
@@ -381,17 +383,20 @@ function renderLessonLab() {
     pronunciation: renderLessonLabPronunciation,
     phrasal: renderLessonLabPhrasal,
     switches: renderLessonLabSwitches,
+    quantifiers: renderLessonLabQuantifiers,
     speaking: renderLessonLabSpeaking,
+    tasks: renderLessonLabTasks,
     mistakes: renderLessonLabMistakes
   };
   $("lessonLabPanel").innerHTML = (renderers[state.lessonLabTab] || renderLessonLabVocabulary)(lesson);
 }
 
-function labActionButtons(text, key, type = "meaning") {
+function labActionButtons(text, key, type = "meaning", exampleText = text) {
   return `
     <div class="speak-actions lab-actions">
       <button data-lab-speak="${escapeAttr(text)}" data-rate="0.65">慢速播放</button>
       <button data-lab-speak="${escapeAttr(text)}" data-rate="0.95">正常播放</button>
+      <button data-lab-speak="${escapeAttr(exampleText || text)}" data-rate="0.88">例句播放</button>
       <button data-lab-tts="${escapeAttr(text)}" data-speed="0.8">高质量播放</button>
       <button data-lab-master="${escapeAttr(key)}">我会了</button>
       <button data-lab-mistake="${escapeAttr(key)}" data-mistake-type="${escapeAttr(type)}" data-mistake-content="${escapeAttr(text)}">加入错题本</button>
@@ -405,40 +410,39 @@ function renderLessonLabVocabulary(lesson) {
     const key = `vocab:${item.word}`;
     return `
       <article class="lab-flip-card">
-        <div class="card-head"><span class="tag">${item.difficulty}</span><span>${(item.tags || []).join(" · ")}</span></div>
+        <div class="card-head"><span class="tag">D${item.difficulty || "-"}</span><span>${(item.tags || []).join(" · ")}</span></div>
         <h3>${item.word}</h3>
         <p class="ipa">${item.ipa}</p>
         <p class="meaning">${item.chinese}</p>
-        <div class="example-line"><b>${item.example}</b><span>${item.note}</span></div>
-        ${labActionButtons(item.audioText || item.example || item.word, key, "意思")}
+        <div class="example-line"><b>${item.example || ""}</b><span>${item.exampleZh || ""}<br>${item.noteZh || item.note || ""}</span></div>
+        ${labActionButtons(item.audioText || item.word, key, "意思", item.example || item.audioText || item.word)}
       </article>
     `;
   }).join("")}</section>`;
 }
 
 function renderLessonLabPronunciation(lesson) {
-  return `<section class="lab-card-grid pronunciation-lab">${(lesson.pronunciation || []).map(item => `
+  return `<section class="lab-card-grid pronunciation-lab">${(lesson.pronunciation || []).flatMap(group => (group.words || []).map(item => `
     <article class="lab-flip-card">
-      <div class="card-head"><span class="tag">Pronunciation Trap</span><span>${item.ipa}</span></div>
+      <div class="card-head"><span class="tag">${group.group}</span><span>${item.ipa}</span></div>
       <h3>${item.word}</h3>
-      <p class="meaning">${item.chineseHint}</p>
-      <div class="trap-box"><b>发音陷阱</b><span>${item.trap}</span></div>
-      <div class="example-line"><b>${item.example}</b></div>
-      ${labActionButtons(item.audioText || item.example || item.word, `pron:${item.word}`, "发音")}
+      <p class="meaning">${item.chinese}</p>
+      <div class="trap-box"><b>发音提示</b><span>${group.noteZh || ""}</span></div>
+      ${labActionButtons(item.word, `pron:${group.id}:${item.word}`, "发音", item.word)}
     </article>
-  `).join("")}</section>`;
+  `)).join("")}</section>`;
 }
 
 function renderLessonLabPhrasal(lesson) {
   return `<section class="phrasal-lab">${(lesson.phrasalVerbs || []).map(item => `
     <article class="lab-card phrasal-card">
-      <div class="phrasal-icon">${item.icon}</div>
+      <div class="phrasal-icon">⚙</div>
       <div>
         <h3>${item.phrase}</h3>
+        <p class="ipa">${item.ipa || ""}</p>
         <p class="meaning">${item.chinese}</p>
-        <div class="example-line"><b>${item.example}</b><span>${item.thinkingTip}</span></div>
-        <p class="separable-note">${item.separable}</p>
-        ${labActionButtons(`${item.phrase}. ${item.example}`, `phrase:${item.phrase}`, "句型")}
+        <div class="example-line"><b>${item.example}</b><span>${item.example2 || ""}<br>${item.patternZh || ""}</span></div>
+        ${labActionButtons(item.audioText || item.phrase, `phrase:${item.id || item.phrase}`, "句型", item.example || item.phrase)}
       </div>
     </article>
   `).join("")}</section>`;
@@ -450,11 +454,11 @@ function renderLessonLabSwitches(lesson) {
   return `
     <article class="lab-card switch-lab-card">
       <p class="eyebrow">CHINESE THINKING SWITCH</p>
-      <h2>${item.chinese || "No sentence switch yet."}</h2>
+      <h2>${item.zh || item.chinese || "No sentence switch yet."}</h2>
       <div id="labSwitchAnswer" class="switch-answer hidden">
-        ${(item.answers || []).map(answer => `<strong>${answer}</strong>`).join("")}
-        <p>${item.note || ""}</p>
-        ${labActionButtons((item.answers || [])[0] || "", `switch:${state.lessonLabSwitchIndex}`, "句型")}
+        ${[item.answer, item.shortAnswer, ...(item.answers || [])].filter(Boolean).map(answer => `<strong>${answer}</strong>`).join("")}
+        <p>${item.focus ? `Focus: ${item.focus}` : item.note || ""}</p>
+        ${labActionButtons(item.answer || item.answers?.[0] || "", `switch:${item.id || state.lessonLabSwitchIndex}`, "句型", item.answer || item.shortAnswer || "")}
       </div>
       <div class="lab-hero-actions">
         <button class="primary-button" data-show-lab-answer>显示答案</button>
@@ -464,15 +468,40 @@ function renderLessonLabSwitches(lesson) {
   `;
 }
 
+function renderLessonLabQuantifiers(lesson) {
+  return `<section class="lab-card-grid">${(lesson.quantifiers || []).map(item => `
+    <article class="lab-flip-card">
+      <div class="card-head"><span class="tag">Quantifier</span><span>${item.id || ""}</span></div>
+      <h3>${item.pattern}</h3>
+      <p class="meaning">${item.chinese}</p>
+      <div class="example-line"><b>${item.example}</b><span>${item.exampleZh || ""}</span></div>
+      ${labActionButtons(item.pattern, `quantifier:${item.id || item.pattern}`, "句型", item.example || item.pattern)}
+    </article>
+  `).join("")}</section>`;
+}
+
 function renderLessonLabSpeaking(lesson) {
   return `<section class="speaking-lab">${(lesson.speakingQuestions || []).map((item, index) => `
     <article class="lab-card speaking-card">
       <h3>${item.question}</h3>
+      <p class="meaning">${item.questionZh || ""}</p>
       <div class="speaking-levels">
-        <div><span>A2 简单回答</span><p>${item.a2}</p>${labActionButtons(item.a2, `speak:a2:${index}`, "听不懂")}</div>
-        <div><span>B1 更自然回答</span><p>${item.b1}</p>${labActionButtons(item.b1, `speak:b1:${index}`, "听不懂")}</div>
+        <div><span>A2 简单回答</span><p>${item.a2Answer || item.a2 || ""}</p>${labActionButtons(item.a2Answer || item.a2 || "", `speak:a2:${item.id || index}`, "听不懂", item.a2Answer || item.a2 || "")}</div>
+        <div><span>B1 更自然回答</span><p>${item.b1Answer || item.b1 || ""}</p>${labActionButtons(item.b1Answer || item.b1 || "", `speak:b1:${item.id || index}`, "听不懂", item.b1Answer || item.b1 || "")}</div>
       </div>
-      <div class="personal-box"><b>替换成我的真实经历</b><span>${item.personalPrompt}</span></div>
+      <div class="personal-box"><b>Useful chunks</b><span>${(item.usefulChunks || []).join(" / ") || item.personalPrompt || ""}</span></div>
+    </article>
+  `).join("")}</section>`;
+}
+
+function renderLessonLabTasks(lesson) {
+  return `<section class="lab-card-grid">${(lesson.realLifeTasks || []).map(item => `
+    <article class="lab-flip-card">
+      <div class="card-head"><span class="tag">Real Life Task</span><span>${item.id || ""}</span></div>
+      <h3>${item.title}</h3>
+      <p class="meaning">${item.scenarioZh}</p>
+      <div class="example-line"><b>${item.sentence}</b><span>${item.sentenceZh || ""}</span></div>
+      ${labActionButtons(item.sentence, `task:${item.id || item.title}`, "真实场景", item.sentence)}
     </article>
   `).join("")}</section>`;
 }
@@ -975,6 +1004,11 @@ $("couldntForm")?.addEventListener("submit", event => {
 
 refreshVoices();
 if ("speechSynthesis" in window) speechSynthesis.addEventListener("voiceschanged", refreshVoices);
+function initialViewFromLocation() {
+  if (location.pathname.replace(/\/$/, "").endsWith("/lesson-lab")) return "lessonLab";
+  return location.hash.replace("#", "") || "home";
+}
+
 window.addEventListener("hashchange", () => switchView(location.hash.replace("#", "") || "home"));
 renderAll();
-switchView(location.hash.replace("#", "") || "home");
+switchView(initialViewFromLocation());

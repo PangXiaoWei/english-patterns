@@ -100,7 +100,7 @@ async function handleTTS(req, res) {
 
 function serveStatic(req, res) {
   const url = new URL(req.url, `http://127.0.0.1:${PORT}`);
-  const pathname = decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname);
+  const pathname = decodeURIComponent((url.pathname === "/" || url.pathname === "/lesson-lab") ? "/index.html" : url.pathname);
   const target = path.normalize(path.join(__dirname, pathname));
   if (!target.startsWith(__dirname) || !existsSync(target)) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
