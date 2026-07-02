@@ -7,7 +7,8 @@ const data = {
   tests: window.TESTS || [],
   writing: window.WRITING_PROMPTS || [],
   vocabulary: window.VOCABULARY || [],
-  minimalPairs: window.MINIMAL_PAIRS || []
+  minimalPairs: window.MINIMAL_PAIRS || [],
+  lessonLabExample: window.EXAMPLE_LESSON_DATA || {}
 };
 
 const store = {
@@ -19,7 +20,11 @@ const store = {
   lastPractice: "english_last_practice_date",
   streakDays: "english_streak_days",
   couldntSay: "english_couldnt_say_today",
-  minimalPairs: "english_minimal_pairs_progress"
+  minimalPairs: "english_minimal_pairs_progress",
+  lessonLabData: "awei.lesson.lab.data.v1",
+  lessonLabProgress: "awei.lesson.lab.progress.v1",
+  lessonLabMistakes: "awei.lesson.lab.mistakes.v1",
+  lessonLabTtsCache: "awei.lesson.lab.tts.cache.v1"
 };
 
 const state = {
@@ -41,7 +46,12 @@ const state = {
   favoriteWords: readJSON(store.favoriteWords, []),
   dailyMission: readJSON(store.dailyMission, { date: todayKey(), done: [] }),
   couldntSay: readJSON(store.couldntSay, []),
-  minimalPairs: readJSON(store.minimalPairs, {})
+  minimalPairs: readJSON(store.minimalPairs, {}),
+  lessonLab: readJSON(store.lessonLabData, data.lessonLabExample),
+  lessonLabTab: "vocabulary",
+  lessonLabSwitchIndex: 0,
+  lessonLabProgress: readJSON(store.lessonLabProgress, { mastered: [], tasks: [] }),
+  lessonLabMistakes: readJSON(store.lessonLabMistakes, [])
 };
 
 function readJSON(key, fallback) {
@@ -331,6 +341,195 @@ function renderProgress() {
   `;
 }
 
+function lessonLabItems() {
+  const lesson = state.lessonLab || {};
+  return [
+    ...(lesson.vocabulary || []).map(item => ({ kind: "vocabulary", key: `vocab:${item.word}`, label: item.word, text: item.audioText || item.example || item.word })),
+    ...(lesson.pronunciation || []).map(item => ({ kind: "pronunciation", key: `pron:${item.word}`, label: item.word, text: item.audioText || item.example || item.word })),
+    ...(lesson.phrasalVerbs || []).map(item => ({ kind: "phrasal", key: `phrase:${item.phrase}`, label: item.phrase, text: item.example || item.phrase })),
+    ...(lesson.sentenceSwitches || []).map((item, index) => ({ kind: "sentence", key: `switch:${index}`, label: item.chinese, text: item.answers?.[0] || item.chinese }))
+  ];
+}
+
+function lessonLabProgressPercent() {
+  const total = Math.max(1, lessonLabItems().length);
+  return Math.round((state.lessonLabProgress.mastered.length / total) * 100);
+}
+
+function saveLessonLab() {
+  writeJSON(store.lessonLabData, state.lessonLab);
+  writeJSON(store.lessonLabProgress, state.lessonLabProgress);
+  writeJSON(store.lessonLabMistakes, state.lessonLabMistakes);
+}
+
+function renderLessonLab() {
+  if (!$("lessonLabPanel")) return;
+  const lesson = state.lessonLab || data.lessonLabExample;
+  $("lessonLabTitle").textContent = lesson.title || "Untitled Lesson";
+  $("lessonLabSource").textContent = lesson.source || "Imported lesson data";
+  $("lessonLabLevel").textContent = lesson.level || "A2+/B1";
+  $("lessonLabTopic").textContent = lesson.topic || "daily English";
+  $("lessonLabVocabCount").textContent = (lesson.vocabulary || []).length;
+  $("lessonLabSwitchCount").textContent = (lesson.sentenceSwitches || []).length;
+  $("lessonLabPronFocus").textContent = (lesson.pronunciation || []).slice(0, 3).map(item => item.word).join(" / ") || "pronunciation";
+  const progress = lessonLabProgressPercent();
+  $("lessonLabProgressText").textContent = `${progress}%`;
+  document.querySelector(".lab-progress-ring")?.style.setProperty("--progress", `${progress}%`);
+  document.querySelectorAll("[data-lab-tab]").forEach(button => button.classList.toggle("active", button.dataset.labTab === state.lessonLabTab));
+  const renderers = {
+    vocabulary: renderLessonLabVocabulary,
+    pronunciation: renderLessonLabPronunciation,
+    phrasal: renderLessonLabPhrasal,
+    switches: renderLessonLabSwitches,
+    speaking: renderLessonLabSpeaking,
+    mistakes: renderLessonLabMistakes
+  };
+  $("lessonLabPanel").innerHTML = (renderers[state.lessonLabTab] || renderLessonLabVocabulary)(lesson);
+}
+
+function labActionButtons(text, key, type = "meaning") {
+  return `
+    <div class="speak-actions lab-actions">
+      <button data-lab-speak="${escapeAttr(text)}" data-rate="0.65">慢速播放</button>
+      <button data-lab-speak="${escapeAttr(text)}" data-rate="0.95">正常播放</button>
+      <button data-lab-tts="${escapeAttr(text)}" data-speed="0.8">高质量播放</button>
+      <button data-lab-master="${escapeAttr(key)}">我会了</button>
+      <button data-lab-mistake="${escapeAttr(key)}" data-mistake-type="${escapeAttr(type)}" data-mistake-content="${escapeAttr(text)}">加入错题本</button>
+      <button data-lab-task="${escapeAttr(key)}">加入今日任务</button>
+    </div>
+  `;
+}
+
+function renderLessonLabVocabulary(lesson) {
+  return `<section class="lab-card-grid">${(lesson.vocabulary || []).map(item => {
+    const key = `vocab:${item.word}`;
+    return `
+      <article class="lab-flip-card">
+        <div class="card-head"><span class="tag">${item.difficulty}</span><span>${(item.tags || []).join(" · ")}</span></div>
+        <h3>${item.word}</h3>
+        <p class="ipa">${item.ipa}</p>
+        <p class="meaning">${item.chinese}</p>
+        <div class="example-line"><b>${item.example}</b><span>${item.note}</span></div>
+        ${labActionButtons(item.audioText || item.example || item.word, key, "意思")}
+      </article>
+    `;
+  }).join("")}</section>`;
+}
+
+function renderLessonLabPronunciation(lesson) {
+  return `<section class="lab-card-grid pronunciation-lab">${(lesson.pronunciation || []).map(item => `
+    <article class="lab-flip-card">
+      <div class="card-head"><span class="tag">Pronunciation Trap</span><span>${item.ipa}</span></div>
+      <h3>${item.word}</h3>
+      <p class="meaning">${item.chineseHint}</p>
+      <div class="trap-box"><b>发音陷阱</b><span>${item.trap}</span></div>
+      <div class="example-line"><b>${item.example}</b></div>
+      ${labActionButtons(item.audioText || item.example || item.word, `pron:${item.word}`, "发音")}
+    </article>
+  `).join("")}</section>`;
+}
+
+function renderLessonLabPhrasal(lesson) {
+  return `<section class="phrasal-lab">${(lesson.phrasalVerbs || []).map(item => `
+    <article class="lab-card phrasal-card">
+      <div class="phrasal-icon">${item.icon}</div>
+      <div>
+        <h3>${item.phrase}</h3>
+        <p class="meaning">${item.chinese}</p>
+        <div class="example-line"><b>${item.example}</b><span>${item.thinkingTip}</span></div>
+        <p class="separable-note">${item.separable}</p>
+        ${labActionButtons(`${item.phrase}. ${item.example}`, `phrase:${item.phrase}`, "句型")}
+      </div>
+    </article>
+  `).join("")}</section>`;
+}
+
+function renderLessonLabSwitches(lesson) {
+  const switches = lesson.sentenceSwitches || [];
+  const item = switches[state.lessonLabSwitchIndex % Math.max(1, switches.length)] || {};
+  return `
+    <article class="lab-card switch-lab-card">
+      <p class="eyebrow">CHINESE THINKING SWITCH</p>
+      <h2>${item.chinese || "No sentence switch yet."}</h2>
+      <div id="labSwitchAnswer" class="switch-answer hidden">
+        ${(item.answers || []).map(answer => `<strong>${answer}</strong>`).join("")}
+        <p>${item.note || ""}</p>
+        ${labActionButtons((item.answers || [])[0] || "", `switch:${state.lessonLabSwitchIndex}`, "句型")}
+      </div>
+      <div class="lab-hero-actions">
+        <button class="primary-button" data-show-lab-answer>显示答案</button>
+        <button class="small-button" data-next-lab-switch>再来一题</button>
+      </div>
+    </article>
+  `;
+}
+
+function renderLessonLabSpeaking(lesson) {
+  return `<section class="speaking-lab">${(lesson.speakingQuestions || []).map((item, index) => `
+    <article class="lab-card speaking-card">
+      <h3>${item.question}</h3>
+      <div class="speaking-levels">
+        <div><span>A2 简单回答</span><p>${item.a2}</p>${labActionButtons(item.a2, `speak:a2:${index}`, "听不懂")}</div>
+        <div><span>B1 更自然回答</span><p>${item.b1}</p>${labActionButtons(item.b1, `speak:b1:${index}`, "听不懂")}</div>
+      </div>
+      <div class="personal-box"><b>替换成我的真实经历</b><span>${item.personalPrompt}</span></div>
+    </article>
+  `).join("")}</section>`;
+}
+
+function renderLessonLabMistakes() {
+  if (!state.lessonLabMistakes.length) {
+    return `<article class="lab-card"><p class="empty-note">还没有截图课程错题。点击词卡、短语或句型上的“加入错题本”后，会出现在这里。</p></article>`;
+  }
+  return `<section class="lab-card-grid">${state.lessonLabMistakes.map(item => `
+    <article class="lab-card">
+      <div class="card-head"><span class="tag">${item.type}</span><span>复习 ${item.reviews} 次</span></div>
+      <h3>${item.content}</h3>
+      <p>最近复习：${item.lastReviewed || "还未复习"}</p>
+      <div class="speak-actions"><button data-lab-review="${item.id}">标记复习</button><button data-lab-speak="${escapeAttr(item.content)}" data-rate="0.75">朗读</button></div>
+    </article>
+  `).join("")}</section>`;
+}
+
+function labSpeakText(text, rate = 0.95) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  const voices = speechSynthesis.getVoices?.() || [];
+  const voice = voices.find(item => /^en[-_]NZ$/i.test(item.lang))
+    || voices.find(item => /^en[-_]GB$/i.test(item.lang))
+    || voices.find(item => /^en[-_]US$/i.test(item.lang))
+    || voices.find(item => /^en/i.test(item.lang));
+  if (voice) utterance.voice = voice;
+  utterance.lang = voice?.lang || "en-US";
+  utterance.rate = rate;
+  utterance.pitch = 1;
+  speechSynthesis.speak(utterance);
+}
+
+async function playHighQualityTTS(text, speed = 0.8) {
+  const cache = window.__lessonLabTtsCache || (window.__lessonLabTtsCache = {});
+  const key = `${text}::${speed}`;
+  try {
+    if (cache[key]) {
+      new Audio(cache[key]).play();
+      return;
+    }
+    const response = await fetch("/api/tts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, voice: "default", speed })
+    });
+    if (!response.ok) throw new Error("TTS request failed");
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    cache[key] = url;
+    new Audio(url).play();
+  } catch {
+    labSpeakText(text, speed);
+  }
+}
+
 function renderLessonSelectors() {
   $("lessonSelect").innerHTML = data.lessons.map((lesson, index) => `<option value="${index}">${index + 1}. ${lesson.title}</option>`).join("");
   $("lessonButtons").innerHTML = data.lessons.map((lesson, index) => `
@@ -494,6 +693,7 @@ function renderAll() {
   renderRealLife();
   renderCouldntSay();
   renderProgress();
+  renderLessonLab();
   renderTest();
   renderMistakes();
 }
@@ -501,6 +701,81 @@ function renderAll() {
 document.addEventListener("click", event => {
   const nav = event.target.closest("[data-view], [data-jump]");
   if (nav) switchView(nav.dataset.view || nav.dataset.jump);
+
+  const labScroll = event.target.closest("[data-lab-scroll]");
+  if (labScroll) document.getElementById(labScroll.dataset.labScroll)?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  const loadExample = event.target.closest("[data-load-example-lesson]");
+  if (loadExample) {
+    state.lessonLab = data.lessonLabExample;
+    state.lessonLabProgress = { mastered: [], tasks: [] };
+    saveLessonLab();
+    $("lessonJsonInput").value = JSON.stringify(state.lessonLab, null, 2);
+    $("lessonImportStatus").textContent = "已加载 exampleLessonData。";
+    renderLessonLab();
+  }
+
+  const labTab = event.target.closest("[data-lab-tab]");
+  if (labTab) {
+    state.lessonLabTab = labTab.dataset.labTab;
+    renderLessonLab();
+  }
+
+  const labSpeak = event.target.closest("[data-lab-speak]");
+  if (labSpeak) labSpeakText(labSpeak.dataset.labSpeak, Number(labSpeak.dataset.rate || "0.95"));
+
+  const labTts = event.target.closest("[data-lab-tts]");
+  if (labTts) playHighQualityTTS(labTts.dataset.labTts, Number(labTts.dataset.speed || "0.8"));
+
+  const labMaster = event.target.closest("[data-lab-master]");
+  if (labMaster) {
+    const key = labMaster.dataset.labMaster;
+    if (!state.lessonLabProgress.mastered.includes(key)) state.lessonLabProgress.mastered.push(key);
+    saveLessonLab();
+    renderLessonLab();
+  }
+
+  const labTask = event.target.closest("[data-lab-task]");
+  if (labTask) {
+    const key = labTask.dataset.labTask;
+    if (!state.lessonLabProgress.tasks.includes(key)) state.lessonLabProgress.tasks.push(key);
+    saveLessonLab();
+    $("lessonImportStatus").textContent = "已加入今日任务。";
+    renderLessonLab();
+  }
+
+  const labMistake = event.target.closest("[data-lab-mistake]");
+  if (labMistake) {
+    state.lessonLabMistakes = [{
+      id: crypto.randomUUID ? crypto.randomUUID() : `lab-${Date.now()}`,
+      content: labMistake.dataset.mistakeContent,
+      type: labMistake.dataset.mistakeType || "意思",
+      reviews: 0,
+      lastReviewed: "",
+      createdAt: new Date().toISOString()
+    }, ...state.lessonLabMistakes].slice(0, 100);
+    saveLessonLab();
+    $("lessonImportStatus").textContent = "已加入截图课程错题本。";
+    renderLessonLab();
+  }
+
+  const labReview = event.target.closest("[data-lab-review]");
+  if (labReview) {
+    state.lessonLabMistakes = state.lessonLabMistakes.map(item => item.id === labReview.dataset.labReview
+      ? { ...item, reviews: item.reviews + 1, lastReviewed: todayKey() }
+      : item);
+    saveLessonLab();
+    renderLessonLab();
+  }
+
+  const showLabAnswer = event.target.closest("[data-show-lab-answer]");
+  if (showLabAnswer) $("labSwitchAnswer")?.classList.remove("hidden");
+
+  const nextLabSwitch = event.target.closest("[data-next-lab-switch]");
+  if (nextLabSwitch) {
+    state.lessonLabSwitchIndex += 1;
+    renderLessonLab();
+  }
 
   const audioButton = event.target.closest("[data-audio], [data-text]");
   if (audioButton && !audioButton.dataset.followRead) {
@@ -651,6 +926,31 @@ $("voiceToggle")?.addEventListener("click", () => {
 $("vocabCategory")?.addEventListener("change", event => { state.vocabCategory = event.target.value; renderVocabulary(); });
 $("vocabLevel")?.addEventListener("change", event => { state.vocabLevel = event.target.value; renderVocabulary(); });
 $("realLifeCategory")?.addEventListener("change", event => { state.realLifeCategory = event.target.value; renderRealLife(); });
+$("importLessonJson")?.addEventListener("click", () => {
+  try {
+    const parsed = JSON.parse($("lessonJsonInput").value);
+    state.lessonLab = parsed;
+    state.lessonLabProgress = { mastered: [], tasks: [] };
+    saveLessonLab();
+    $("lessonImportStatus").textContent = "JSON 课程导入成功。";
+    renderLessonLab();
+  } catch {
+    $("lessonImportStatus").textContent = "JSON 格式不正确，请检查括号、逗号和引号。";
+  }
+});
+$("resetLessonLab")?.addEventListener("click", () => {
+  state.lessonLab = data.lessonLabExample;
+  state.lessonLabProgress = { mastered: [], tasks: [] };
+  $("lessonJsonInput").value = JSON.stringify(state.lessonLab, null, 2);
+  saveLessonLab();
+  renderLessonLab();
+});
+$("lessonImageInput")?.addEventListener("change", event => {
+  const file = event.target.files?.[0];
+  if (!file) return;
+  const url = URL.createObjectURL(file);
+  $("lessonImagePreview").innerHTML = `<img src="${url}" alt="Uploaded lesson screenshot preview"><span>${file.name}</span>`;
+});
 $("couldntForm")?.addEventListener("submit", event => {
   event.preventDefault();
   const item = {

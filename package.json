@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "start": "node server.mjs",
     "build": "node scripts/check-audio.mjs --quiet",
     "generate-audio": "node scripts/generate-audio.mjs",
     "generate-audio:test": "node scripts/generate-audio.mjs --limit 10",

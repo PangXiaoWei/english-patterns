@@ -18,6 +18,7 @@
       <button data-view="daily">每日任务</button>
       <button data-view="vocabulary">发音词库</button>
       <button data-view="realLife">真实场景</button>
+      <button data-view="lessonLab">截图变课程</button>
       <button data-view="couldntSay">没说出来</button>
       <button data-view="switches">英语开关</button>
       <button data-view="verbs">动词训练</button>
@@ -74,6 +75,67 @@
     <section id="realLifeView" class="view">
       <div class="module-head"><div><p class="eyebrow">REAL LIFE ENGLISH</p><h2>真实生活场景英语</h2></div><select id="realLifeCategory"></select></div>
       <div id="realLifePanel" class="vocab-grid"></div>
+    </section>
+
+    <section id="lessonLabView" class="view">
+      <section class="lab-hero">
+        <div>
+          <p class="eyebrow">AI SCREENSHOT LESSON LAB</p>
+          <h1>AI Screenshot Lesson Lab</h1>
+          <p>把教材截图、文章截图变成可朗读、可跟读、可复习的英语课程</p>
+          <div class="lab-hero-actions">
+            <button class="primary-button" data-lab-scroll="labImportPanel">开始导入课程</button>
+            <button class="small-button" data-load-example-lesson>查看示例</button>
+          </div>
+        </div>
+        <div class="lab-orbit">
+          <span>VOCAB</span><span>IPA</span><span>TTS</span><span>B1</span>
+        </div>
+      </section>
+
+      <section class="lesson-lab-grid">
+        <article class="lab-card source-card" id="labImportPanel">
+          <div class="card-head"><span class="tag">课程来源</span><button class="small-button" data-load-example-lesson>加载 exampleLessonData</button></div>
+          <div class="screenshot-drop">
+            <input id="lessonImageInput" type="file" accept="image/*">
+            <div id="lessonImagePreview">
+              <strong>截图预览占位区</strong>
+              <span>本阶段支持上传图片预览，但不做 OCR。</span>
+            </div>
+          </div>
+          <label class="json-label" for="lessonJsonInput">粘贴结构化 JSON 数据</label>
+          <textarea id="lessonJsonInput" rows="10" placeholder='{"title":"My Lesson","level":"A2+","vocabulary":[...]}'></textarea>
+          <div class="lab-hero-actions">
+            <button class="primary-button" id="importLessonJson">导入 JSON</button>
+            <button class="small-button" id="resetLessonLab">重置为示例</button>
+          </div>
+          <p id="lessonImportStatus" class="lab-status"></p>
+        </article>
+
+        <article class="lab-card overview-card">
+          <div class="card-head"><span class="tag">今日课程概览</span><span id="lessonLabLevel">A2+/B1</span></div>
+          <h2 id="lessonLabTitle">Digital Detox</h2>
+          <p id="lessonLabSource"></p>
+          <div class="lab-stat-grid">
+            <div><strong id="lessonLabTopic">electronic devices</strong><span>重点主题</span></div>
+            <div><strong id="lessonLabVocabCount">0</strong><span>今日词汇</span></div>
+            <div><strong id="lessonLabSwitchCount">0</strong><span>句型数量</span></div>
+            <div><strong id="lessonLabPronFocus">ough</strong><span>发音重点</span></div>
+          </div>
+          <div class="lab-progress-ring"><span id="lessonLabProgressText">0%</span></div>
+        </article>
+      </section>
+
+      <section class="lab-tabs" aria-label="Lesson Lab tabs">
+        <button class="active" data-lab-tab="vocabulary">重点词汇</button>
+        <button data-lab-tab="pronunciation">发音训练</button>
+        <button data-lab-tab="phrasal">短语动词</button>
+        <button data-lab-tab="switches">句型开关</button>
+        <button data-lab-tab="speaking">真实场景口语</button>
+        <button data-lab-tab="mistakes">错题本</button>
+      </section>
+
+      <div id="lessonLabPanel" class="lesson-lab-panel"></div>
     </section>
 
     <section id="couldntSayView" class="view">
@@ -142,7 +204,8 @@
   <script src="data/pronunciation.js"></script>
   <script src="data/tests.js"></script>
   <script src="data/vocabulary.js"></script>
+  <script src="data/lessonLabData.js"></script>
   <script src="src/utils/audio.js?v=20260629-segmented"></script>
-  <script src="app.js?v=20260629-segmented"></script>
+  <script src="app.js?v=20260702-lesson-lab"></script>
 </body>
 </html>
