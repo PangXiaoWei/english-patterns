@@ -8,8 +8,8 @@ window.LESSONS = [
     explanation: "中文可以省略主语，英语通常要先说清楚谁做、做什么，再放对象、地点和时间。",
     examples: [
       { en: "I study English every day.", zh: "我每天学习英语。", note: "I 是主语，study 是动作。" },
-      { en: "I volunteer at City Mission on Fridays.", zh: "我每周五在 City Mission 做志愿者。", note: "地点和时间放在动作后面。" },
-      { en: "The teacher explained the grammar.", zh: "老师解释了语法。", note: "先说谁，再说动作。" }
+      { en: "Emma helps at a local community shop on Fridays.", zh: "Emma 每周五在一家本地社区商店帮忙。", note: "地点和时间放在动作后面。" },
+      { en: "The trainer explained the grammar.", zh: "培训者解释了语法。", note: "先说谁，再说动作。" }
     ],
     commonMistakes: [{ wrong: "Today I want ask teacher.", right: "I want to ask the teacher today.", reason: "want 后面要用 to + 动词原形。" }],
     drills: [{ question: "我想今天问老师。", options: ["Today I want ask teacher.", "I want to ask the teacher today.", "I want asking teacher today."], answer: "I want to ask the teacher today.", explanation: "want to ask 是固定结构。" }],
@@ -23,11 +23,11 @@ window.LESSONS = [
     englishPattern: "Subject + past verb + object/place/time",
     explanation: "中文里的“去了、做了、打了电话”，英语通常用过去式表达。",
     examples: [
-      { en: "I went to City Mission last Friday.", zh: "我上周五去了 City Mission。", note: "last Friday 是过去时间，go 变 went。" },
+      { en: "Emma visited a local community shop last Friday.", zh: "Emma 上周五去了一家本地社区商店。", note: "last Friday 是过去时间，visit 变 visited。" },
       { en: "I called Ben yesterday.", zh: "我昨天给 Ben 打了电话。", note: "call 变 called。" },
       { en: "I studied English last night.", zh: "我昨晚学了英语。", note: "study 变 studied。" }
     ],
-    commonMistakes: [{ wrong: "I go to City Mission last Friday.", right: "I went to City Mission last Friday.", reason: "last Friday 已经是过去，go 要变 went。" }],
+    commonMistakes: [{ wrong: "Emma visit a local community shop last Friday.", right: "Emma visited a local community shop last Friday.", reason: "last Friday 已经是过去，visit 要变 visited。" }],
     drills: [{ question: "我昨天给 Ben 打了电话。", options: ["I call Ben yesterday.", "I called Ben yesterday.", "I have called Ben yesterday."], answer: "I called Ben yesterday.", explanation: "yesterday + 了 = 过去式。" }],
     speakingTask: { prompt: "Say three things you did last weekend.", keywords: ["went", "called", "studied", "volunteered"] }
   },
@@ -39,11 +39,11 @@ window.LESSONS = [
     englishPattern: "I/he/she/it + was; you/we/they + were",
     explanation: "过去不是动作，而是状态、地点、感觉时，常用 was / were。",
     examples: [
-      { en: "I was at City Mission last Friday.", zh: "我上周五在 City Mission。", note: "在某地是状态。" },
+      { en: "Emma was at a local community shop last Friday.", zh: "Emma 上周五在一家本地社区商店。", note: "在某地是状态。" },
       { en: "I was tired yesterday.", zh: "我昨天很累。", note: "感觉用 was。" },
       { en: "They were in class.", zh: "他们当时在上课。", note: "they 用 were。" }
     ],
-    commonMistakes: [{ wrong: "I at City Mission yesterday.", right: "I was at City Mission yesterday.", reason: "英语句子需要动词，过去状态用 was。" }],
+    commonMistakes: [{ wrong: "Emma at the local shop yesterday.", right: "Emma was at the local shop yesterday.", reason: "英语句子需要动词，过去状态用 was。" }],
     drills: [{ question: "我昨天很累。", options: ["I tired yesterday.", "I was tired yesterday.", "I were tired yesterday."], answer: "I was tired yesterday.", explanation: "I + was。" }],
     speakingTask: { prompt: "Say where you were yesterday afternoon.", keywords: ["was", "at home", "in class", "tired"] }
   },

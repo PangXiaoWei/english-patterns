@@ -1,9 +1,9 @@
 ﻿window.englishFile9bComputerLessonData = {
   "id": "english-file-9b-computer-devices",
-  "title": "English File 9B - Computer & Electronic Devices",
+  "title": "Computer & Electronic Devices",
   "level": "A2+/B1",
   "topic": "Digital detox / electronic devices / computer actions",
-  "sourceNote": "Summarized from user's screenshots for personal study. Focus on useful computer and electronic-device English, not a full textbook copy.",
+  "sourceNote": "Original learning data for practical computer and electronic-device English.",
   "learningGoalZh": "先掌握电脑和电子设备的核心名词、常见动作短语、ough/augh 发音坑，以及能在真实场景中开口回答。",
   "recommendedFlow": [
     "先点读 vocabulary：慢速词 → 正常词 → 例句。",
@@ -18,7 +18,7 @@
       "chinese": "转换插头；旅行转接头",
       "noteZh": "adaptor 和 adapter 都常见。重点是 dap /dæp/，最后 /tə/ 很轻。",
       "example": "I need a travel adaptor when I travel.",
-      "exampleZh": "我需要一个新西兰旅行转换插头。",
+      "exampleZh": "旅行时我需要一个转换插头。",
       "audioText": "an adaptor",
       "tags": [
         "device",
@@ -569,7 +569,7 @@
     {
       "id": "sp04",
       "question": "How many pins do plugs usually have? Do you need a travel adaptor abroad?",
-      "questionZh": "你国家的插头有几个插脚？出国需要转换插头吗？",
+      "questionZh": "不同地区的插头可能不同，旅行时什么时候需要转换插头？",
       "a2Answer": "Many plugs have two or three pins. When I travel, I may need a travel adaptor.",
       "b1Answer": "Plugs can be different in other countries, so I usually check before I travel and bring a travel adaptor.",
       "usefulChunks": [

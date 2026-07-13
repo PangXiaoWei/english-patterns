@@ -11,6 +11,7 @@ const MIME = {
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
+  ".webmanifest": "application/manifest+json; charset=utf-8",
   ".mp3": "audio/mpeg",
   ".png": "image/png",
   ".jpg": "image/jpeg",
@@ -61,7 +62,7 @@ async function handleTTS(req, res) {
     const text = String(body.text || "").trim();
     const speed = Math.min(1.2, Math.max(0.6, Number(body.speed || 1)));
     const voice = ["marin", "cedar"].includes(body.voice) ? body.voice : "marin";
-    const accent = ["neutral", "new-zealand", "british", "american"].includes(body.accent) ? body.accent : "neutral";
+    const accent = ["neutral", "british", "american"].includes(body.accent) ? body.accent : "neutral";
     if (!text) {
       res.writeHead(400, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ error: "text is required" }));
@@ -72,7 +73,6 @@ async function handleTTS(req, res) {
       : "Speak clearly and naturally in everyday English. Use accurate pronunciation and natural intonation.";
     const accentInstructions = {
       neutral: "",
-      "new-zealand": " Use a clear New Zealand English accent, suitable for an English learner.",
       british: " Use a clear British English accent, suitable for an English learner.",
       american: " Use a clear American English accent, suitable for an English learner."
     };
@@ -117,7 +117,7 @@ function setCorsHeaders(res) {
 
 function serveStatic(req, res) {
   const url = new URL(req.url, `http://127.0.0.1:${PORT}`);
-  const pathname = decodeURIComponent((url.pathname === "/" || url.pathname === "/lesson-lab") ? "/index.html" : url.pathname);
+  const pathname = decodeURIComponent((["/", "/unit-5", "/unit-5/", "/studio", "/studio/"].includes(url.pathname)) ? "/index.html" : url.pathname);
   const target = path.normalize(path.join(__dirname, pathname));
   if (!target.startsWith(__dirname) || !existsSync(target)) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
@@ -147,5 +147,5 @@ createServer((req, res) => {
   res.writeHead(405, { "Content-Type": "text/plain; charset=utf-8" });
   res.end("Method not allowed");
 }).listen(PORT, () => {
-  console.log(`Awei English Patterns running at http://127.0.0.1:${PORT}/`);
+  console.log(`PatternFlow running at http://127.0.0.1:${PORT}/`);
 });

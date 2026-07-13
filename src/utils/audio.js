@@ -1,8 +1,9 @@
 (function () {
   const keys = {
-    voiceEnabled: "english_voice_enabled",
-    slowMode: "english_slow_mode_enabled",
-    followRead: "english_follow_read_count"
+    voiceEnabled: "patternFlow.voiceEnabled",
+    voiceName: "patternFlow.voice",
+    slowMode: "patternFlow.slowMode",
+    followRead: "patternFlow.followRead"
   };
 
   const pronunciationMap = {
@@ -79,6 +80,7 @@
     try {
       if ("speechSynthesis" in window) speechSynthesis.cancel();
     } catch {}
+    notifyAudioState(false, "");
   }
 
   function refreshVoices() {
@@ -86,11 +88,32 @@
   }
 
   function pickVoice() {
-    const preferred = ["Google US English", "Microsoft Aria", "Microsoft Jenny", "Microsoft David", "Microsoft Zira", "Samantha", "Alex"];
-    return preferred.map(name => voices.find(voice => voice.name.includes(name))).find(Boolean)
+    const selected = localStorage.getItem(keys.voiceName) || "";
+    const preferred = ["Microsoft Jenny", "Microsoft Aria", "Microsoft Guy", "Google US English", "Samantha"];
+    return voices.find(voice => voice.name === selected)
+      || preferred.map(name => voices.find(voice => voice.name.includes(name))).find(Boolean)
       || voices.find(voice => /^en[-_]US$/i.test(voice.lang))
       || voices.find(voice => /^en/i.test(voice.lang))
       || null;
+  }
+
+  function getVoices() {
+    refreshVoices();
+    return [...voices];
+  }
+
+  function setVoiceName(name) {
+    localStorage.setItem(keys.voiceName, String(name || ""));
+  }
+
+  function getVoiceName() {
+    return localStorage.getItem(keys.voiceName) || "";
+  }
+
+  function notifyAudioState(playing, text) {
+    try {
+      window.dispatchEvent(new CustomEvent("patternflow:audio-state", { detail: { playing, text } }));
+    } catch {}
   }
 
   function escapeRegExp(value) {
@@ -111,12 +134,13 @@
     const voice = pickVoice();
     if (voice) utterance.voice = voice;
     utterance.lang = "en-US";
-    utterance.rate = slow ? 0.7 : 1.0;
+    utterance.rate = slow ? 0.68 : 0.9;
     utterance.pitch = 1;
     utterance.volume = 1;
     return new Promise(resolve => {
-      utterance.onend = () => resolve(false);
-      utterance.onerror = () => resolve(false);
+      utterance.onstart = () => notifyAudioState(true, text);
+      utterance.onend = () => { notifyAudioState(false, ""); resolve(false); };
+      utterance.onerror = () => { notifyAudioState(false, ""); resolve(false); };
       speechSynthesis.speak(utterance);
     });
   }
@@ -209,12 +233,15 @@
         const audio = new Audio(audioPath);
         currentAudio = audio;
         audio.playbackRate = slow ? 0.82 : 1;
+        audio.onplay = () => notifyAudioState(true, "Local pronunciation audio");
         audio.onended = () => {
           if (token === playbackToken) currentAudio = null;
+          notifyAudioState(false, "");
           resolve(true);
         };
         audio.onerror = () => {
           if (token === playbackToken) currentAudio = null;
+          notifyAudioState(false, "");
           resolve(false);
         };
         audio.play().catch(() => resolve(false));
@@ -248,6 +275,9 @@
     normalizeSpeechText,
     recordFollowRead,
     isVoiceEnabled,
-    setVoiceEnabled
+    setVoiceEnabled,
+    getVoices,
+    setVoiceName,
+    getVoiceName
   };
 })();

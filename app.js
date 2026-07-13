@@ -12,8 +12,8 @@ const data = {
 };
 
 const store = {
-  progress: "awei.switch.progress.v1",
-  mistakes: "awei.switch.mistakes.v1",
+  progress: "patternFlow.legacy.progress",
+  mistakes: "patternFlow.legacy.mistakes",
   masteredWords: "english_mastered_words",
   favoriteWords: "english_favorite_words",
   dailyMission: "english_daily_mission_done",
@@ -21,10 +21,10 @@ const store = {
   streakDays: "english_streak_days",
   couldntSay: "english_couldnt_say_today",
   minimalPairs: "english_minimal_pairs_progress",
-  lessonLabData: "awei.lesson.lab.data.v1",
-  lessonLabProgress: "awei.lesson.lab.progress.v1",
-  lessonLabMistakes: "awei.lesson.lab.mistakes.v1",
-  lessonLabTtsCache: "awei.lesson.lab.tts.cache.v1"
+  lessonLabData: "patternFlow.studio.data",
+  lessonLabProgress: "patternFlow.studio.progress",
+  lessonLabMistakes: "patternFlow.studio.review",
+  lessonLabTtsCache: "patternFlow.studio.ttsCache"
 };
 
 const state = {
@@ -305,7 +305,7 @@ function renderMinimalPairs() {
 
 function renderRealLife() {
   if (!$("realLifePanel")) return;
-  const categories = ["全部", "Classroom English", "Homestay English", "Volunteer English", "Shopping & Supermarket", "Job Search English", "IT Support English", "Social Small Talk", "Health & Feelings", "Bank & Payment"];
+  const categories = ["全部", "Learning English", "Home and Daily Life", "Community English", "Shopping & Supermarket", "Workplace English", "IT Support English", "Social Small Talk", "Health & Feelings", "Bank & Payment"];
   $("realLifeCategory").innerHTML = categories.map(item => `<option>${item}</option>`).join("");
   $("realLifeCategory").value = state.realLifeCategory;
   const visible = data.vocabulary
@@ -678,13 +678,14 @@ function renderLessonLabMistakes() {
   `).join("")}</section>`;
 }
 
-function labSpeakText(text, rate = 0.95) {
+function labSpeakText(text, rate = 0.95, preferredVoiceName = "") {
   if (!("speechSynthesis" in window)) return;
   stopLessonLabAudio();
   speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   const voices = speechSynthesis.getVoices?.() || [];
-  const voice = voices.find(item => /^en[-_]NZ$/i.test(item.lang))
+  const voice = voices.find(item => item.name === preferredVoiceName)
+    || voices.find(item => /^en[-_]NZ$/i.test(item.lang))
     || voices.find(item => /^en[-_]GB$/i.test(item.lang))
     || voices.find(item => /^en[-_]US$/i.test(item.lang))
     || voices.find(item => /^en/i.test(item.lang));
@@ -764,13 +765,18 @@ async function playHighQualityTTS(text, options = {}) {
       button.classList.add("playing");
     }
     audio.onended = () => stopLessonLabAudio();
-    audio.onerror = () => labSpeakText(text, speed);
+    audio.onerror = () => labSpeakText(text, speed, options.fallbackVoiceName || "");
     await audio.play();
   } catch {
     if (button) button.classList.remove("loading", "playing");
-    labSpeakText(text, speed);
+    labSpeakText(text, speed, options.fallbackVoiceName || "");
   }
 }
+
+window.PatternFlowHighQualityTTS = {
+  play: playHighQualityTTS,
+  stop: stopLessonLabAudio
+};
 
 function renderLessonSelectors() {
   $("lessonSelect").innerHTML = data.lessons.map((lesson, index) => `<option value="${index}">${index + 1}. ${lesson.title}</option>`).join("");
@@ -1247,6 +1253,7 @@ refreshVoices();
 if ("speechSynthesis" in window) speechSynthesis.addEventListener("voiceschanged", refreshVoices);
 function initialViewFromLocation() {
   if (location.pathname.replace(/\/$/, "").endsWith("/lesson-lab")) return "lessonLab";
+  if (location.pathname.replace(/\/$/, "").endsWith("/unit-5")) return "unit5";
   return location.hash.replace("#", "") || "home";
 }
 

@@ -1,11 +1,14 @@
 {
-  "name": "english-patterns",
+  "name": "patternflow",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "build": "node scripts/check-audio.mjs --quiet",
+    "build": "node scripts/check-audio.mjs --quiet && node scripts/validate-patternflow.mjs",
+    "lint": "node --check patternflow.js && node --check unit5.js && node --check src/utils/audio.js && node --check data/patternFlowData.js && node --check data/unit5Data.js && node --check service-worker.js && node --check server.mjs",
+    "typecheck": "node scripts/validate-patternflow.mjs",
+    "test": "node scripts/validate-patternflow.mjs",
     "generate-audio": "node scripts/generate-audio.mjs",
     "generate-audio:test": "node scripts/generate-audio.mjs --limit 10",
     "generate-audio:dry": "node scripts/generate-audio.mjs --dry-run --limit 10",

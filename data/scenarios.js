@@ -37,7 +37,7 @@ window.SCENARIOS = [
   ["cancel-booking","取消餐厅预订",["booking","cancel","sorry","tonight","another time"],{
     A2:["Hello, I have a booking tonight.","I need to cancel it.","I am sorry.","The booking is under my name.","Thank you for your help."],
     B1:["Hello, I am calling to cancel my booking for tonight.","The booking is under my name.","I am sorry for the inconvenience.","I hope I can book another time later."],
-    B1Plus:["Hello, I am calling because I need to cancel my booking for tonight.","The reservation is under the name Awei.","I am sorry for the short notice and any inconvenience this may cause.","I would be happy to book again another time."]
+    B1Plus:["Hello, I am calling because I need to cancel my booking for tonight.","The reservation is under the name Jordan Lee.","I am sorry for the short notice and any inconvenience this may cause.","I would be happy to book again another time."]
   }],
   ["doctor","给医生预约",["appointment","available","morning","problem","thank you"],{
     A2:["Hello, I want to make an appointment.","I am available tomorrow morning.","I have a health problem.","Can I see the doctor?","Thank you."],

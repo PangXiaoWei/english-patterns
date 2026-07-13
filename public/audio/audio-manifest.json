@@ -706,13 +706,6 @@
     "model": "gpt-4o-mini-tts",
     "generatedAt": "2026-06-29"
   },
-  "lesson.subject-verb.example.2": {
-    "text": "I volunteer at City Mission on Fridays.",
-    "path": "public/audio/en-us/full-site/lessons/subject-verb-example-2.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
   "lesson.subject-verb.example.3": {
     "text": "The teacher explained the grammar.",
     "path": "public/audio/en-us/full-site/lessons/subject-verb-example-3.mp3",
@@ -769,13 +762,6 @@
     "model": "gpt-4o-mini-tts",
     "generatedAt": "2026-06-29"
   },
-  "lesson.past-simple.example.1": {
-    "text": "I went to City Mission last Friday.",
-    "path": "public/audio/en-us/full-site/lessons/past-simple-example-1.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
   "lesson.past-simple.example.2": {
     "text": "I called Ben yesterday.",
     "path": "public/audio/en-us/full-site/lessons/past-simple-example-2.mp3",
@@ -786,20 +772,6 @@
   "lesson.past-simple.example.3": {
     "text": "I studied English last night.",
     "path": "public/audio/en-us/full-site/lessons/past-simple-example-3.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
-  "lesson.past-simple.mistake.1.wrong": {
-    "text": "I go to City Mission last Friday.",
-    "path": "public/audio/en-us/full-site/lessons/past-simple-mistake-1-wrong.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
-  "lesson.past-simple.mistake.1.right": {
-    "text": "I went to City Mission last Friday.",
-    "path": "public/audio/en-us/full-site/lessons/past-simple-mistake-1-right.mp3",
     "voice": "marin",
     "model": "gpt-4o-mini-tts",
     "generatedAt": "2026-06-29"
@@ -839,13 +811,6 @@
     "model": "gpt-4o-mini-tts",
     "generatedAt": "2026-06-29"
   },
-  "lesson.was-were.example.1": {
-    "text": "I was at City Mission last Friday.",
-    "path": "public/audio/en-us/full-site/lessons/was-were-example-1.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
   "lesson.was-were.example.2": {
     "text": "I was tired yesterday.",
     "path": "public/audio/en-us/full-site/lessons/was-were-example-2.mp3",
@@ -856,20 +821,6 @@
   "lesson.was-were.example.3": {
     "text": "They were in class.",
     "path": "public/audio/en-us/full-site/lessons/was-were-example-3.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
-  "lesson.was-were.mistake.1.wrong": {
-    "text": "I at City Mission yesterday.",
-    "path": "public/audio/en-us/full-site/lessons/was-were-mistake-1-wrong.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
-  "lesson.was-were.mistake.1.right": {
-    "text": "I was at City Mission yesterday.",
-    "path": "public/audio/en-us/full-site/lessons/was-were-mistake-1-right.mp3",
     "voice": "marin",
     "model": "gpt-4o-mini-tts",
     "generatedAt": "2026-06-29"
@@ -3247,13 +3198,6 @@
     "model": "gpt-4o-mini-tts",
     "generatedAt": "2026-06-29"
   },
-  "scenario.cancel-booking.B1Plus.2": {
-    "text": "The reservation is under the name Awei.",
-    "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1plus-2.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
   "scenario.cancel-booking.B1Plus.3": {
     "text": "I am sorry for the short notice and any inconvenience this may cause.",
     "path": "public/audio/en-us/full-site/scenarios/cancel-booking-b1plus-3.mp3",
@@ -3754,13 +3698,6 @@
   "test.6.answer": {
     "text": "What did you eat yesterday?",
     "path": "public/audio/en-us/full-site/tests/test-6-answer.mp3",
-    "voice": "marin",
-    "model": "gpt-4o-mini-tts",
-    "generatedAt": "2026-06-29"
-  },
-  "test.7.question": {
-    "text": "Awei volunteers on Fridays. True or False?",
-    "path": "public/audio/en-us/full-site/tests/test-7-question.mp3",
     "voice": "marin",
     "model": "gpt-4o-mini-tts",
     "generatedAt": "2026-06-29"

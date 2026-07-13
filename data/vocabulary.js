@@ -28,7 +28,7 @@
     ["balance", "word", "Bank & Payment", "A2", 2, "余额", "the amount of money left", "Can you check my balance?", "你能帮我查一下余额吗？", "check my balance", ["bank", "payment"]],
     ["platform", "word", "Transport & Directions", "A2", 2, "站台", "where you wait for a train", "Which platform does the train leave from?", "这趟火车从哪个站台出发？", "which platform", ["transport"]],
     ["dizzy", "word", "Health & Feelings", "A2", 2, "头晕的", "feeling like you may fall", "I feel dizzy today.", "我今天感觉头晕。", "feel dizzy", ["health"]],
-    ["comfortable", "word", "Homestay English", "A2", 2, "舒服的", "feeling good and relaxed", "The room is clean and comfortable.", "这个房间干净又舒服。", "comfortable room", ["home", "daily"]],
+    ["comfortable", "word", "Home and Daily Life", "A2", 2, "舒服的", "feeling good and relaxed", "The room is clean and comfortable.", "这个房间干净又舒服。", "comfortable room", ["home", "daily"]],
     ["check in", "phrase", "Phrasal Verbs", "A2", 1, "登记；报到", "to arrive and report your presence", "I need to check in at the front desk.", "我需要在前台登记。", "check in at the front desk", ["travel", "daily"]],
     ["look after", "phrase", "Phrasal Verbs", "A2", 1, "照顾", "to take care of someone or something", "I can look after the front desk for ten minutes.", "我可以帮忙看十分钟前台。", "look after the desk", ["work", "volunteer"]],
     ["fill out", "phrase", "Classroom English", "A2", 1, "填写", "to complete a form", "Please fill out this form.", "请填写这张表格。", "fill out a form", ["classroom", "work"]],
